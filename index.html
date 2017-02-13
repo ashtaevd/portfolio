@@ -1,90 +1,152 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Daniil Ashtaev</title>
-<meta name="description" content="Daniil Ashtaev by Daniil Ashtaev, a website by Daniil Ashtaev">
-<meta name="keywords" content="Ashtaev, design, work, photography, posters, branding, russian, freelance, Cooper Union, New York, NYC">
-<meta name="author" content="Daniil Ashtaev">
-</head>
+<html lang="en">
+	<head>
+		<title>Desk Spin</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
 
-<body>
-	<script src="https://use.typekit.net/cmu1yol.js"></script>
-	<script>try{Typekit.load({ async: true });}catch(e){}</script>
-	
-	<div id="wrapper">
-		<div class="circle"><a href="http://instagram.com/rapgame"></a></div>
-		<div class="introtext">2 million for a&nbsp;verse.</br></br></div>
-		<!--<div class="connect">bird 6th-letter chaind ball <s></s>en</s>hance ₽/$</div>-->
-		<div class="contactinfo">ashtaevd@gmail.com | <a href="https://www.linkedin.com/in/daniil-ashtaev-92b579100">link up</a></div>
-		
-	</div>
-</body>
+			body {
+				margin: 0px;
+				background-color: #000000;
+				overflow: hidden;
+			}
 
-<style type="text/css">
+			#textTop {
+				position: absolute;
+				top: 0px; width: 100%;
+				padding: 25px;
+			    color: white;
+			    font-family: monospace, courier, sans-serif;
+			    text-align: center;
+			    pointer-events: none;
+			}
 
-	@font-face {
-    		font-family: AkzidenzGroteskPro-Regular;
-    		src: url(https://github.com/ashtaevd/ashtaevd.github.com/blob/master/AkzidenzGroteskPro-Regular.otf);
-    		font-weight:normal;
-	}
+		</style>
+	</head>
 
-	html, body {
-		background-color: #cabdaa;
-		cursor: default;
-	}
+	<body>
 
-	#wrapper {
-    	width: 500px;
-    	margin: 0 auto;
-	}
-	
-	.circle {
-		width: 120px;
-		height: 120px;
-		margin: 15% auto;
-		/*padding-bottom:60px;*/
-		border-radius: 50%;
-		background-image:  url("textures/dirtyd.jpg");
-		background-size: contain;
-		background-color: white;
-		opacity: 1;
-	}
+		<script src="js/three.js"></script>
+		<script src="js/OrbitControls.js"></script>
 
-	.introtext {
-		/*padding-top: 20%;*/
-		/*font-family: "cooper-black-std", helvetica, arial, sans-serif;*/
-		font-family: Garamond, Georgia, Times, Serif;
-		/*font-style: italic;*/
-		font-size: 55pt;
-		font-weight: bold;
-		/*color: #001c32;*/
-		/*filter: blur(5px);*/
-		color: #fbfbec;
-		/*text-shadow: 2.5px 2.5px 10px cyan;*/
-		text-align: center;
-		text-transform: lowercase;
-	} 
-	
-	.contactinfo {
-		font-family: courier, helvetica, arial, sans-serif;
-		font-size: 13pt;
-		/*color: #001c32;*/
-		color: #3f3f3f;
-		/*text-shadow: 1.2px 1.2px 3px gainsboro;*/
-		text-align: center;
-	}
-	
-	a:visited {
-		color: #3f3f3f;
-	}
-	
-	a:hover {
-		color: #fbfbec;
-	}
-	
-	.rotated90 {
-		-webkit-transform: rotate(-90deg);
-	}
+		<script>
 
-</style>
+			var camera, controls, scene, renderer;
+
+			var desks = [];
+			var colors = [];
+
+			var mesh;
+			var daniil;
+
+			init();
+			render();
+			//animate();
+
+			function init() {
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setClearColor( 0xffffff );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );
+
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 5000 );
+				camera.position.z = 400;
+
+				controls = new THREE.OrbitControls( camera, renderer.domElement );
+				controls.addEventListener( 'change', render ); // remove when using animation loop
+				// enable animation loop when using damping or autorotation
+				//controls.enableDamping = true;
+				//controls.dampingFactor = 0.25;
+				controls.enableZoom = false;
+
+				scene = new THREE.Scene();
+				scene.fog = new THREE.Fog( 0xffffff, 10, 1200 );
+
+				// var light = new THREE.AmbientLight( 0x404040 ); // soft white light
+				// scene.add( light );
+
+				var daniilTexture = new THREE.TextureLoader().load( 'textures/dirtyd.jpg' );
+				var daniilGeometry = new THREE.BoxBufferGeometry( 48, 48, 48 );
+				var daniilMaterial = new THREE.MeshBasicMaterial( { map: daniilTexture } );
+				daniil = new THREE.Mesh ( daniilGeometry, daniilMaterial );
+
+				daniil.rotation.x = Math.random() * 2 * Math.PI;
+				daniil.rotation.y = Math.random() * 2 * Math.PI;
+
+				scene.add( daniil );
+
+				var geometry = new THREE.BoxBufferGeometry( 48, 24, 3 );
+
+				for ( var i = 0; i < desks.length; i++ ) {
+				
+					var colorName = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+					var material = new THREE.MeshBasicMaterial( { color: colorName } );	
+
+				}
+
+
+				var radius = 700;
+				var nDesks = 80;
+
+				for ( var i = 0; i < nDesks; i++) {
+
+					mesh = new THREE.Mesh ( geometry, material );
+					scene.add( mesh );
+					
+					mesh.position.set( radius/2 - radius * Math.random(), 
+									radius/2 - radius * Math.random(), radius/2 - radius * Math.random());
+
+					mesh.rotation.x = Math.random() * 2 * Math.PI;
+					mesh.rotation.y = Math.random();
+
+					desks.push( mesh );
+
+				}
+
+				//mesh = new THREE.Mesh( geometry, material );
+				//scene.add( mesh );
+				
+				window.addEventListener( 'resize', onWindowResize, false );
+
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			// function animate() {
+
+			// 	requestAnimationFrame( animate );
+
+			// 	//controls.update(); // required if controls.enableDamping = true, or if controls.autoRotate = true
+
+			// 	render();
+
+			// }
+
+			function render() {
+
+				//requestAnimationFrame( animate );
+				daniil.rotation.x += 0.005;
+				daniil.rotation.y += 0.01;
+				renderer.render( scene, camera );
+
+			}
+
+			console.log ( desks.length + " desks in order." );
+
+		</script>
+
+		<div id="textTop"> Yes</div>
+
+	</body>
 </html>
