@@ -1,0 +1,101 @@
+
+	/*@media (max-width:760px){
+
+	}*/
+
+	body {
+		margin: 0px;
+		background-color: #000000;
+		overflow: hidden;
+	}
+
+	a {
+
+		color: #1f1d1e;
+		text-decoration: none;
+
+	}
+
+	#textTop, #textBottom {
+
+		position: absolute;
+		color: white;
+		font-size: 1.8em;
+		font-family: sans-serif;
+		z-index: 99;
+		text-align: center;
+
+	}
+
+	#textTop {
+
+		top: 0px; width: 100%;
+		padding: 25px;
+	    
+	}
+
+
+	#textBottom {
+
+		bottom: 0px; width: 100%;
+		padding: 25px;
+
+	}
+
+	#about {
+
+		  background: #fafafa;
+		  box-shadow: 0 0 5px rgba(0,0,0,.3);
+		  color: #333;
+		  display: flex;
+		  position: fixed;
+		  flex-direction: column;
+		  height: 100%;
+		  width: 40%;
+		  /*top: 100px;*/
+		  right: -520px;
+		  /*padding: 25px;*/
+		  -webkit-transition-duration: 0.3s;
+				-moz-transition-duration: 0.3s;
+		  -o-transition-duration: 0.3s;
+		  transition-duration: 0.3s;
+		  font-family: sans-serif;
+		  font-size: 1em;
+		  line-height: 1.6em;
+		  overflow: scroll;
+		  opacity:.9;
+
+	}
+
+	#about.on {
+
+	  right: 0;
+
+	}
+
+	#about * {
+		padding: 20px;
+	}
+
+	#aboutZero {
+
+		padding-bottom:2px;
+		order: 1;
+		/*background-color:gray;*/
+
+	}
+
+	#aboutOne {
+
+		order: 2;
+		flex-grow:1;
+
+	}
+
+	#aboutTwo {
+
+		order: 3;
+		/*background-color: red;*/
+		flex-grow:1;
+
+	}
