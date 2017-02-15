@@ -101,8 +101,8 @@
 	}
 
 
-	/* MEDIA QUERIES */
-	@media screen and (max-width:768px){
+/* MEDIA QUERIES */
+@media screen and (max-width:768px){
 
 	#about {
 
@@ -113,6 +113,12 @@
 	#about.on {
 
 		width: 100%;
+
+	}
+		
+	#aboutTwo {
+
+		padding-bottom: 50px;
 
 	}
 
