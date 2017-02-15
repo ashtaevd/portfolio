@@ -2,37 +2,75 @@
 <html lang="en">
 	<head>
 		<title>Daniil Ashtaev by Daniil Ashtaev</title>
+		
 		<meta name="description" content="Daniil Ashtaev by Daniil Ashtaev, a website by Daniil Ashtaev">
 		<meta name="keywords" content="Ashtaev, design, work, photography, posters, branding, russian, freelance, Cooper Union, New York, NYC">
 		<meta name="author" content="Daniil Ashtaev">
+		
 		<meta charset="utf-8">
+		
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<style>
-
-			body {
-				margin: 0px;
-				background-color: #000000;
-				overflow: hidden;
-			}
-
-			#textTop {
-				position: absolute;
-				top: 0px; width: 100%;
-				padding: 25px;
-			    color: white;
-			    font-family: monospace, courier, sans-serif;
-			    text-align: center;
-			    pointer-events: none;
-			}
-
-		</style>
+		
+		<link rel="stylesheet" href="styles.css">
+		
 	</head>
 
 	<body>
-
+		
+		<script src="js/jquery-3.1.1.min.js"></script>
 		<script src="js/three.js"></script>
 		<script src="js/OrbitControls.js"></script>
+		
+		<!-- Actual Body -->
+		<div id="textTop"> 
 
+			<a href="http://ashtaev.com">Daniil Ashtaev</a>
+
+		</div>
+
+		<div id="textBottom"> 
+
+			<a id="aboutButton">About</a>
+
+		</div>
+
+		<div id="about">
+			
+				<div id="aboutZero">
+
+					Statement:
+
+				</div>
+
+				<div id="aboutOne">
+
+					Visual design is inseparable from language and the message it communicates. How does one convey a statement to the viewer, evoking intended understanding on the other end? It is the designer’s virtue and responsibility to speak accurately on behalf of another. Thus, the language chosen, voice and authenticity are the crucial factors. Imagine the state of design if designers embarked on research expeditions during their process, to approach each design objective as an unknown every time. Undertaking problems anew would bear unparalleled results. Possibly, projects would develop authenticity marked by pure inimitability. 
+
+					</br></br>
+
+					I am a senior at The Cooper Union School of Art and, as a multidisciplinary artist, I embrace graphic design, photography, and various object-making techniques. In my practice, I value the roles of authenticity and language as defining elements of identity. Non-digital production methods and creation of narratives play a prominent role in his process.
+				</div>
+
+				<div id="aboutTwo">
+
+					Please, write to: </br>
+					ashtaevd@gmail.com
+
+				</div>	
+				
+		</div>
+
+		<!-- jQuery -->
+		<script>
+
+			$('#aboutButton').click(function(){
+				$('#about').toggleClass('on');
+				console.log ("clicked");
+			});
+
+		</script>
+
+		<!-- THREE.js -->
 		<script>
 
 			var camera, controls, scene, renderer;
@@ -152,8 +190,6 @@
 			console.log ( desks.length + " desks in order." );
 
 		</script>
-
-		<div id="textTop"> Yes</div>
 
 	</body>
 </html>
