@@ -99,3 +99,21 @@
 		flex-grow:1;
 
 	}
+
+
+	/* MEDIA QUERIES */
+	@media screen and (max-width:768px){
+
+	#about {
+
+		padding-top: 50px;
+	
+	}
+
+	#about.on {
+
+		width: 100%;
+
+	}
+
+}
