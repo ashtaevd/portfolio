@@ -16,12 +16,15 @@
 	</head>
 
 	<body>
-		
+
 		<script src="js/jquery-3.1.1.min.js"></script>
 		<script src="js/three.js"></script>
 		<script src="js/OrbitControls.js"></script>
-		
+
+
 		<!-- Actual Body -->
+		<div id="wrapper">
+
 		<div id="textTop"> 
 
 			<a href="http://ashtaev.com">Daniil Ashtaev</a>
@@ -35,40 +38,67 @@
 		</div>
 
 		<div id="about">
-			
+		
 				<div id="aboutZero">
+
+					Born in <span class="tooltip">Ulan-Ude <span class="tooltiptext">A city in Siberia located about 100 km southeast of Lake Baikal.</span></span> and having lived in Moscow, I now reside in New York, where I study and work.
+					<!-- </br></br> -->
+					<p>I am a soon-to-be graduate of The Cooper Union,<sup>'17</sup> where I learned to embrace design not limited to graphics alone. My work ranges from written words to chopped wood.</p>
+
+					<p>Print and digital.
+					World and web.</p>
+					
+					<!-- I have almost over 1.5 years of professional experience working  -->
+
+					<p>I also have 1.58 years of professional experience in identity, infographics, illustration and so on and so forth.</p>
+					<!-- </br></br> -->
+					<!-- <p>Print and digital.
+					World and web.</p> -->
+
+				</div>
+
+				<!-- <div id="aboutOne">
 
 					Statement:
 
-				</div>
+					</br></br>
 
-				<div id="aboutOne">
-
-					Visual design is inseparable from language and the message it communicates. How does one convey a statement to the viewer, evoking intended understanding on the other end? It is the designer’s virtue and responsibility to speak accurately on behalf of another. Thus, the language chosen, voice and authenticity are the crucial factors. Imagine the state of design if designers embarked on research expeditions during their process, to approach each design objective as an unknown every time. Undertaking problems anew would bear unparalleled results. Possibly, projects would develop authenticity marked by pure inimitability. 
+					Visual design is inseparable from language and the message it communicates. How does one convey a statement to the viewer, evoking intended understanding on the other end? It is the designer’s virtue and responsibility to speak accurately on behalf of another. Thus, the language chosen, voice and authenticity are the crucial&nbsp;factors. 
 
 					</br></br>
 
-					I am a senior at The Cooper Union School of Art and, as a multidisciplinary artist, I embrace graphic design, photography, and various object-making techniques. In my practice, I value the roles of authenticity and language as defining elements of identity. Non-digital production methods and creation of narratives play a prominent role in his process.
-				</div>
+					Imagine the state of design if designers embarked on research expeditions during their process, to approach each design objective as an unknown every time. Undertaking problems anew would bear unparalleled results. Possibly, projects would develop authenticity marked by pure&nbsp;inimitability. 
+
+				</div> -->
 
 				<div id="aboutTwo">
 
 					Please, write to: </br>
 					ashtaevd@gmail.com
+					
+					</br></br>
+
+					<a href="https://www.instagram.com/rapgame/"> @rapgame </a>
 
 				</div>	
 				
+		</div>
+
 		</div>
 
 		<!-- jQuery -->
 		<script>
 
 			$('#aboutButton').click(function(){
-				$('#about').toggleClass('on');
-				console.log ("clicked");
+
+				$('#about').toggleClass('aboutOn');
+				$('#textTop').toggleClass('aboutOn');
+				$('#textBottom').toggleClass('aboutOn');
+
 			});
 
 		</script>
+
 
 		<!-- THREE.js -->
 		<script>
@@ -93,20 +123,21 @@
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				document.body.appendChild( renderer.domElement );
 
-				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 5000 );
-				camera.position.z = 400;
+				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 5000 );
+				//camera.position.x = 100;
+				camera.position.z = 300;
 
 				controls = new THREE.OrbitControls( camera, renderer.domElement );
-				controls.addEventListener( 'change', render ); // remove when using animation loop
+				//controls.addEventListener( 'change', render ); // remove when using animation loop
 				// enable animation loop when using damping or autorotation
-				//controls.enableDamping = true;
-				//controls.dampingFactor = 0.25;
+				controls.enableDamping = true;
+				controls.dampingFactor = 0.5;
 				//controls.enableZoom = false;
-				controls.minDistance = 150;
+				controls.minDistance = 100;
 				controls.maxDistance = 800;
 
 				scene = new THREE.Scene();
-				scene.fog = new THREE.Fog( 0xffffff, 10, 1200 );
+				scene.fog = new THREE.Fog( 0xffffff, 1, 1000 );
 
 				// var light = new THREE.AmbientLight( 0x404040 ); // soft white light
 				// scene.add( light );
@@ -131,18 +162,16 @@
 				}
 
 
-				var radius = 700;
-				var nDesks = 80;
+				var radius = 1100;
+				var nDesks = 1000;
 
 				for ( var i = 0; i < nDesks; i++) {
 
 					mesh = new THREE.Mesh ( geometry, material );
 					scene.add( mesh );
 					
-					mesh.position.set( 	radius/2 - radius * Math.random(), 
-								radius/2 - radius * Math.random(), 
-							  	radius/2 - radius * Math.random()
-							 );
+					mesh.position.set( radius/2 - radius * Math.random(), 
+									radius/2 - radius * Math.random(), radius/2 - radius * Math.random());
 
 					mesh.rotation.x = Math.random() * 2 * Math.PI;
 					mesh.rotation.y = Math.random();
@@ -172,7 +201,7 @@
 
 				requestAnimationFrame( animate );
 
-				//controls.update(); // required if controls.enableDamping = true, or if controls.autoRotate = true
+				controls.update(); // required if controls.enableDamping = true, or if controls.autoRotate = true
 
 				render();
 
@@ -190,6 +219,8 @@
 			console.log ( desks.length + " desks in order." );
 
 		</script>
+
+		
 
 	</body>
 </html>
