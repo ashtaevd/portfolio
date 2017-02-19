@@ -174,7 +174,6 @@
 
 
 /*---MOBILE---*/
-
 @media screen and (max-width:768px){
 
 	/*html, body {
@@ -185,10 +184,20 @@
 
 	}*/
 
-	#about {
+	#textTop.aboutOn {
 
-		/*padding-top: 50px;*/
-	
+		font-size: 25vw;
+		opacity: .25;
+
+	}
+
+
+	#textBottom.aboutOn {
+
+		width: 100%;
+		background-color: rgba(222,222,222,.7);
+		z-index: 99;
+
 	}
 
 	#about.aboutOn {
@@ -199,19 +208,7 @@
 
 	#textTop, #textBottom {
 
-		font-size: 1.4em;
-
-	}
-
-	#textBottom {
-
-		z-index: 99;
-	
-	}
-
-	#aboutTwo, {
-
-		/*padding-bottom: 50px;*/
+		font-size: 1.5em;
 
 	}
 
