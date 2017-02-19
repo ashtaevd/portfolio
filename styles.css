@@ -180,12 +180,15 @@
 
 		overflow-x: hidden;
 		overflow-y: hidden;
+
 	}
 
 	#textTop.aboutOn {
 
 		font-size: 25vw;
 		opacity: .25;
+		text-align: center;
+		width: 100%;
 
 	}
 
@@ -195,6 +198,13 @@
 		width: 100%;
 		background-color: rgba(222,222,222,.7);
 		z-index: 99;
+		/*padding-right: 50%;*/
+
+	}
+
+	#aboutTwo {
+
+		padding-bottom: 95px;
 
 	}
 
@@ -203,11 +213,5 @@
 		width: 100%;
 
 	}
-
-/* 	#textTop, #textBottom {
-
-		font-size: 1.5em;
-
-	} */
 
 }
