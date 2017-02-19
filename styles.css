@@ -176,13 +176,11 @@
 /*---MOBILE---*/
 @media screen and (max-width:768px){
 
-	/*html, body {
+	html, body {
 
-		margin: 0; 
-		height: 100%; 
-		overflow: hidden;
-
-	}*/
+		overflow-x: hidden;
+		overflow-y: hidden;
+	}
 
 	#textTop.aboutOn {
 
@@ -206,10 +204,10 @@
 
 	}
 
-	#textTop, #textBottom {
+/* 	#textTop, #textBottom {
 
 		font-size: 1.5em;
 
-	}
+	} */
 
 }
