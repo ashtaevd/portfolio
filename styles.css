@@ -1,20 +1,62 @@
 
-	/*@media (max-width:760px){
-
-	}*/
-
 	body {
+
 		margin: 0px;
 		background-color: #000000;
 		overflow: hidden;
+
 	}
 
 	a {
 
 		color: #1f1d1e;
 		text-decoration: none;
+		margin: 0;
+		padding: 0;
+		border: 0;
 
 	}
+
+	sup {
+
+		font-size:.3em;
+		left:100px;
+
+	}
+
+	.tooltip {
+	    position: relative;
+	    display: inline-block;
+	    border-bottom: 1px dotted black;
+	    border-color: rgb(140,140,140);
+	}
+
+	.tooltip .tooltiptext {
+	    visibility: hidden;
+	    width: 120px;
+	    background-color: white;
+	    color: black;
+	    text-align: center;
+	    font-size: .5em;
+	    line-height: 1em;
+	    border-radius: 3px;
+	    padding: 5px 3px;
+
+	    /* Position the tooltip */
+	    position: absolute;
+	    z-index: 1;
+	    top: 100%
+	    left: 50%
+	    margin-left: -60px;
+
+	}
+
+	.tooltip:hover .tooltiptext {
+
+	    visibility: visible;
+	
+	}
+
 
 	#textTop, #textBottom {
 
@@ -22,112 +64,155 @@
 		color: white;
 		font-size: 1.8em;
 		font-family: sans-serif;
-		z-index: 99;
 		text-align: center;
+		cursor: pointer;
+		padding: 25px 0 25px 0;
+		-webkit-transition-duration: 0.3s;
+		-moz-transition-duration: 0.3s;
+		-o-transition-duration: 0.3s;
+		transition-duration: 0.3s;
 
 	}
 
 	#textTop {
 
-		top: 0px; width: 100%;
-		padding: 25px;
+		top: 0px; 
+		width: 100%;
 	    
 	}
 
 
 	#textBottom {
 
-		bottom: 0px; width: 100%;
-		padding: 25px;
+		bottom: 0px; 
+		width: 100%;
+
+	}
+
+	#textTop.aboutOn, #textBottom.aboutOn {
+
+		width: 50%;
+		padding-right: 50%;
 
 	}
 
 	#about {
 
-		  background: #fafafa;
-		  box-shadow: 0 0 5px rgba(0,0,0,.3);
-		  color: #333;
-		  display: flex;
-		  position: fixed;
-		  flex-direction: column;
-		  height: 100%;
-		  width: 40%;
-		  /*top: 100px;*/
-		  right: -520px;
-		  /*padding: 25px;*/
-		  -webkit-transition-duration: 0.3s;
-				-moz-transition-duration: 0.3s;
-		  -o-transition-duration: 0.3s;
-		  transition-duration: 0.3s;
-		  font-family: sans-serif;
-		  font-size: 1em;
-		  line-height: 1.6em;
-		  overflow: scroll;
-		  opacity:.9;
+		background-color: rgba(2,2,4,.75);
+		color: rgb(226,226,226);
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		/*justify-content: space-around;*/
+		height: 100%;
+		width: 0%;
+		right: -50%;
+		-webkit-transition-duration: 0.3s;
+		-moz-transition-duration: 0.3s;
+		-o-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		font-family: sans-serif;
+		font-size: 1em;
+		line-height: 1.6em;
+		overflow: scroll;
+		opacity: .9;
 
 	}
 
-	#about.on {
-
-	  right: 0;
+	#about::-webkit-scrollbar {
+   	
+   		display: none;
 
 	}
 
-	#about * {
+	#about.aboutOn {
+
+		/*left: 10%;*/
+		/*right: 10%;*/
+		/*top: 10%;*/
+		/*height: 80%;*/
+		/*bottom:50%;*/
+		/*width: 80%;*/
+		
+		right:0;
+		width: 50%;
+
+	}
+
+	#aboutZero, #aboutOne, #aboutTwo { 
+
 		padding: 20px;
+		font-size: 1.5em;
+		line-height:1.5em;
+
 	}
+	
 
 	#aboutZero {
 
-		padding-bottom:2px;
+		padding-top: 25px;
 		order: 1;
-		/*background-color:gray;*/
+		flex: none;
 
 	}
 
 	#aboutOne {
 
 		order: 2;
-		flex-grow:1;
+		flex: none;
 
 	}
 
 	#aboutTwo {
 
+		padding-bottom: 25px;
 		order: 3;
-		/*background-color: red;*/
-		flex-grow:1;
+		flex: none;
 
 	}
 
 
-/* MEDIA QUERIES */
+
+/*---MOBILE---*/
+
 @media screen and (max-width:768px){
-	
-/* 	html, body {
+
+	/*html, body {
 
 		margin: 0; 
 		height: 100%; 
 		overflow: hidden;
 
-	} */
+	}*/
 
 	#about {
 
-		padding-top: 50px;
+		/*padding-top: 50px;*/
 	
 	}
 
-	#about.on {
+	#about.aboutOn {
 
 		width: 100%;
 
 	}
-		
-/* 	#aboutTwo {
 
-		padding-bottom: 50px;
+	#textTop, #textBottom {
 
-	} */
+		font-size: 1.4em;
+
+	}
+
+	#textBottom {
+
+		z-index: 99;
+	
+	}
+
+	#aboutTwo, {
+
+		/*padding-bottom: 50px;*/
+
+	}
 
 }
