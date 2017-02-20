@@ -88,6 +88,10 @@
 
 		<!-- jQuery -->
 		<script>
+			
+			$('#wrapper').on('touchmove', function (event) {
+				event.preventDefault();
+			}, false);
 
 			$('#aboutButton').click(function(){
 
