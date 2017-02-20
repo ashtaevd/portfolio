@@ -189,6 +189,14 @@
 
 	}
 
+	#textTop. {
+
+		-webkit-transition-delay: .2s;
+		transition-delay: .2s;
+
+	}
+
+	
 	#textTop.aboutOn {
 
 		font-size: 25vw;
