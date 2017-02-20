@@ -33,40 +33,73 @@
 	.tooltip {
 	    position: relative;
 	    display: inline-block;
-	    border-bottom: 1px dotted black;
+	    border-bottom: 2px dotted black;
+	    padding-bottom: -20px;
 	    border-color: rgb(140,140,140);
+	    opacity: 1;
 	}
 
 	.tooltip .tooltiptext {
-	    visibility: hidden;
-	    width: 120px;
-	    background-color: white;
-	    color: black;
-	    text-align: center;
-	    font-size: .5em;
-	    line-height: 1em;
-	    border-radius: 3px;
-	    padding: 5px 3px;
 
-	    /* Position the tooltip */
+	    visibility: hidden;
+	    width: 130px;
+	    background-color: rgb(226,226,226);
+	    color: #f650bb;
+	    text-align: center;
+	    border-radius: 1px;
+	    padding: 5px 5px;
 	    position: absolute;
 	    z-index: 1;
-	    top: 100%
-	    left: 50%
-	    margin-left: -60px;
+	    top: 100%;
+	    left: 50%;
+	    margin-left: -65px;
+	    opacity: 0;
+	    font-size: .7em;
+	    line-height: 1.1em;
 
 	}
 
 	.tooltip:hover .tooltiptext {
 
 	    visibility: visible;
+	    opacity: 1;
 	
 	}
 
+	.tooltip .tooltiptext.ulan-ude{
+
+		background-image: url("textures/lenin.jpg");
+		background-size: 130px 162px;
+		width: 130px;
+		height: 162px;
+		padding: 0;
+
+	}
+
+	.tooltip .tooltiptext.moscow{
+
+		background-image: url("textures/moscow.jpg");
+		background-size: 130px 162px;
+		width: 130px;
+		height: 162px;
+		padding: 0;
+
+	}
+
+	.tooltip .tooltiptext.new-york{
+
+		background-image: url("textures/new-york.jpg");
+		background-size: 130px 162px;
+		width: 130px;
+		height: 162px;
+		padding: 0;
+
+	}
 
 	#textTop, #textBottom {
 
 		position: absolute;
+		width: 100%;
 		color: white;
 		font-size: 1.8em;
 		font-family: sans-serif;
@@ -83,15 +116,13 @@
 	#textTop {
 
 		top: 0px; 
-		width: 100%;
 	    
 	}
 
 
 	#textBottom {
 
-		bottom: 0px; 
-		width: 100%;
+		bottom: 0px;
 
 	}
 
@@ -133,13 +164,6 @@
 
 	#about.aboutOn {
 
-		/*left: 10%;*/
-		/*right: 10%;*/
-		/*top: 10%;*/
-		/*height: 80%;*/
-		/*bottom:50%;*/
-		/*width: 80%;*/
-		
 		right:0;
 		width: 50%;
 
@@ -152,7 +176,6 @@
 		line-height:1.5em;
 
 	}
-	
 
 	#aboutZero {
 
@@ -171,7 +194,6 @@
 
 	#aboutTwo {
 
-/*		padding-bottom: 25px;*/
 		order: 3;
 		flex: none;
 
@@ -185,17 +207,18 @@
 
 	}
 
-
-
-
-/*---MOBILE---*/
-
 @media screen and (max-width:768px){
 
 	html, body {
 
 		overflow-x: hidden;
 		overflow-y: hidden;
+
+	}
+
+	#about.aboutOn {
+
+		width: 100%;
 
 	}
 
@@ -206,35 +229,29 @@
 
 	}
 
-
 	#textTop.aboutOn {
 
+		width: 100%;
+		padding-right: 0;
 		font-size: 25vw;
 		opacity: .25;
 		text-align: center;
-		width: 100%;
-
+	
 	}
 
 
 	#textBottom.aboutOn {
 
 		width: 100%;
+		padding-right: 0;
 		background-color: rgba(222,222,222,.7);
 		z-index: 99;
-		/*padding-right: 50%;*/
 
 	}
 
 	#aboutThree {
 
 		padding-bottom: 100px;
-
-	}
-
-	#about.aboutOn {
-
-		width: 100%;
 
 	}
 
