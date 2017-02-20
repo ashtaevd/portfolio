@@ -171,15 +171,25 @@
 
 	#aboutTwo {
 
-		padding-bottom: 25px;
+/*		padding-bottom: 25px;*/
 		order: 3;
+		flex: none;
+
+	}
+
+	#aboutThree {
+
+		padding-bottom: 25px;
+		order: 4;
 		flex: none;
 
 	}
 
 
 
+
 /*---MOBILE---*/
+
 @media screen and (max-width:768px){
 
 	html, body {
@@ -196,7 +206,7 @@
 
 	}
 
-	
+
 	#textTop.aboutOn {
 
 		font-size: 25vw;
@@ -216,9 +226,9 @@
 
 	}
 
-	#aboutTwo {
+	#aboutThree {
 
-		padding-bottom: 95px;
+		padding-bottom: 100px;
 
 	}
 
