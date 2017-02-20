@@ -89,7 +89,7 @@
 		<!-- jQuery -->
 		<script>
 			
-			$('#wrapper').on('touchmove', function (event) {
+			$('#wrapper').not($(this).next()).on('touchmove', function (event) {
 				event.preventDefault();
 			}, false);
 
