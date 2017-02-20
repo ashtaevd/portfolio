@@ -44,12 +44,22 @@
 					Greetings!
 
 					I have many things to say, but...
+
 					</br></br>
-					Born in <span class="tooltip">Ulan-Ude <span class="tooltiptext">A city in Siberia located about 100 km southeast of Lake Baikal.</span></span> and raised in Moscow, I now reside in New York, where I study and work.
-					<!-- </br></br> -->
+
+					Born in <span class="tooltip">Ulan-Ude <span class="tooltiptext ulan-ude"></span></span> 
+
+					and raised in <span class="tooltip">Moscow<span class="tooltiptext moscow"></span></span>, 
+
+					I now reside in 
+
+					<span class="tooltip">New York<span class="tooltiptext new-york"></span></span>
+
+					, where I study and work.
+					
 					<p>I am a soon-to-be graduate of The Cooper Union,<sup>'17</sup> where I have learned to embrace design not limited to graphics alone. My work ranges from flat to physical, from written words to chopped wood.</p>
 
-					<p>As of today, I have 1.58 years of professional experience in identity, infographics, animation, illustration and so on and so forth.</p>
+					<p>As of today, I have <span class="tooltip"><span class="workYears"></span> years <span class="tooltiptext">From the beginning of my first internship, that is.</span></span> of professional experience in identity, infographics, animation, illustration and so on and so forth.</p>
 
 					<p>Print and digital.
 					World and web.</p>
@@ -80,11 +90,11 @@
 
 		<!-- jQuery -->
 		<script>
-			
-// 			$('#wrapper').not($(this).next()).on('touchmove', function (event) {
-// 				event.preventDefault();
-// 			}, false);
-			
+
+			$('#wrapper').not($(this).next()).on('touchmove', function (event) {
+				event.preventDefault();
+			}, false);
+
 			$('#aboutButton').click(function(){
 
 				$('#about').toggleClass('aboutOn');
@@ -93,86 +103,36 @@
 
 			});
 
+			//---professional practice duration
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth()+1; //January is 0!
+			var yyyy = today.getFullYear();
 
-			// function works() {
+			if(dd<10) {
+			    dd='0'+dd
+			} 
 
-			// 	if($('#about').hasClass("on")) {
+			if(mm<10) {
+			    mm='0'+mm
+			} 
 
-			// 		$(document).click(function(event){
+			today = mm+'.'+dd+'.'+yyyy;
+			console.log("the date is " + today);
 
-			// 			if( $(event.target).closest('#about').length == 0 ) { 
-							
-			// 				$('#about').toggleClass('on'); 
+			var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+			var firstDate = new Date(2015,08,17);
+			var secondDate = new Date(yyyy,mm,dd);
 
-			// 			}
+			var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
 
-			// 		});
+			console.log("it's been " + diffDays + " days.");
 
-			// 	}
+			workYears = diffDays /= 365;
+			workYears = Math.round(workYears * 100) / 100;
+			console.log ("Or, " + workYears + " years.");
 
-			// };
-
-
-			// Works but toggles with click anywhere but #about
-			// $(document).click(function(event){
-
-			// 	if( $(event.target).closest('#about').length == 0 ) { 
-					
-			// 		$('#about').removeClass('on'); 
-
-			// 	}
-
-			// });
-
-
-			// $(document).click(function(event) { 
-
-			//     if(!$(event.target).closest('#about').length) {
-			//         if($('#about').hasClass("on")) {
-			//             $('#menucontainer').toggleClass("on");
-			//         }
-			//     }        
-			// })
-
-
-			// $("html body").on("touchstart click", function( event ) {
-
-			// 	var target = $( event.target );
-
-			// 		if ( target.is( "#about" ) ) {
-			// 		        console.log("Clicked on #about")
-			// 		    } else {
-			// 		        $('#about').toggleClass('on');
-			// 		    }
-					
-			// });
-
-
-			// ---
-
-
-			// CLick on #aboutOne
-			// var $outsideArea = $('#aboutOne');
- 
-			// $outsideArea.on('click', function() {
-
-			//     exitAbout();
-
-			// });
-
-			// function exitAbout(){
-
-			// 	if($('#about').attr('class') == 'on'){
-	 
-			//        $('#about').toggleClass('on');
-			 
-			//     } else {
-
-			//     	console.log("Nothing to do here")
-
-			//     }
-			
-			// };
+			$("span.workYears").text(workYears);
 
 		</script>
 
