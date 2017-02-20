@@ -92,10 +92,6 @@
 // 			$('#wrapper').not($(this).next()).on('touchmove', function (event) {
 // 				event.preventDefault();
 // 			}, false);
-
-			$('#wrapper').ontouchmove = function(e) {
-			    e.stopPropagation();
-			}; 
 			
 			$('#aboutButton').click(function(){
 
