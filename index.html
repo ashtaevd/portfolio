@@ -1,342 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Portfolio by Daniil Ashtaev</title>
-		
-		<meta name="description" content="Selected design works up to 2017.">
-		<meta name="keywords" content="Ashtaev, design, portfolio, work, photography, posters, branding, russian, freelance, Cooper Union, New York, NYC">
-		<meta name="author" content="Daniil Ashtaev">
-		
-		<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-		
-		<meta charset="utf-8">
-		
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		
-		<meta http-equiv="refresh" content="1; url=https://www.dropbox.com/s/n32t6o5xfvsgwkx/daniil-ashtaev-jgd-portfolio.pdf?dl=0">
-		<script type="text/javascript">
-		    window.location.href = "https://www.dropbox.com/s/n32t6o5xfvsgwkx/daniil-ashtaev-jgd-portfolio.pdf?dl=0"
-		</script>
-		
-		<link rel="stylesheet" href="styles.css">
-		
-	</head>
-
-	<body>
-
-		<script src="js/jquery-3.1.1.min.js"></script>
-		<script src="js/three.js"></script>
-		<script src="js/OrbitControls.js"></script>
-
-
-		<!-- Actual Body -->
-		<div id="wrapper">
-
-		<div id="textTop"> 
-
-			<a href="http://ashtaev.com">Daniil Ashtaev</a>
-
-		</div>
-
-		<div id="textBottom"> 
-
-			<a id="aboutButton">About</a>
-
-		</div>
-
-		<div id="about">
-		
-				<div id="aboutZero">
-
-					Greetings!
-
-					I have many things to say, but...
-
-					</br></br>
-
-					Born in <span class="tooltip">Ulan-Ude <span class="tooltiptext ulan-ude"></span></span> 
-
-					and raised in <span class="tooltip">Moscow<span class="tooltiptext moscow"></span></span>, 
-
-					I now reside in 
-
-					<span class="tooltip">New York<span class="tooltiptext new-york"></span></span>, where I study and work.
-					
-					<p>I am a soon-to-be graduate of The Cooper Union,<sup>'17</sup> where I have learned to embrace design not limited to graphics alone. My work ranges from flat to physical, from written words to chopped wood.</p>
-
-					<p>As of today, I have <span class="tooltip"><span class="workYears"></span> years <span class="tooltiptext">More precisely, <span class="workDays"></span> days. From the beginning of my first internship, that&nbsp;is.</span></span> of professional experience in identity, infographics, animation, illustration and so on and so forth.</p>
-
-					<p>Print and digital.
-					World and web.</p>
-
-				</div>
-
-				<div id="aboutTwo">
-
-					Please, write to: </br>
-					ashtaevd@gmail.com
-
-				</div>	
-				
-				<div id="aboutThree">	
-
-					Farewell!
-
-					</br>
-					</br>
-
-					<a href="https://www.instagram.com/rapgame/" class="whiteLink"> @rapgame </a>
-
-				</div>	
-				
-		</div>
-
-		</div>
-
-		<!-- jQuery -->
-		<script>
-
-			$('#aboutButton').click(function(){
-
-				$('#about').toggleClass('aboutOn');
-				$('#textTop').toggleClass('aboutOn');
-				$('#textBottom').toggleClass('aboutOn');
-
-			});
-
-			//---professional practice duration
-			var today = new Date();
-			var dd = today.getDate();
-			var mm = today.getMonth()+1; //January is 0!
-			var yyyy = today.getFullYear();
-
-			if(dd<10) {
-			    dd='0'+dd
-			} 
-
-			if(mm<10) {
-			    mm='0'+mm
-			} 
-
-			today = mm+'.'+dd+'.'+yyyy;
-
-			var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-			var firstDate = new Date(2015,08,17);
-			var secondDate = new Date(yyyy,mm,dd);
-
-			var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
-			$("span.workDays").text(diffDays);
-
-			workYears = diffDays /= 365;
-			workYears = Math.round(workYears * 100) / 100;
-
-			$("span.workYears").text(workYears);
-
-
-			// function works() {
-
-			// 	if($('#about').hasClass("on")) {
-
-			// 		$(document).click(function(event){
-
-			// 			if( $(event.target).closest('#about').length == 0 ) { 
-							
-			// 				$('#about').toggleClass('on'); 
-
-			// 			}
-
-			// 		});
-
-			// 	}
-
-			// };
-
-
-			// Works but toggles with click anywhere but #about
-			// $(document).click(function(event){
-
-			// 	if( $(event.target).closest('#about').length == 0 ) { 
-					
-			// 		$('#about').removeClass('on'); 
-
-			// 	}
-
-			// });
-
-
-			// $(document).click(function(event) { 
-
-			//     if(!$(event.target).closest('#about').length) {
-			//         if($('#about').hasClass("on")) {
-			//             $('#menucontainer').toggleClass("on");
-			//         }
-			//     }        
-			// })
-
-
-			// $("html body").on("touchstart click", function( event ) {
-
-			// 	var target = $( event.target );
-
-			// 		if ( target.is( "#about" ) ) {
-			// 		        console.log("Clicked on #about")
-			// 		    } else {
-			// 		        $('#about').toggleClass('on');
-			// 		    }
-					
-			// });
-
-
-			// ---
-
-
-			// CLick on #aboutOne
-			// var $outsideArea = $('#aboutOne');
- 
-			// $outsideArea.on('click', function() {
-
-			//     exitAbout();
-
-			// });
-
-			// function exitAbout(){
-
-			// 	if($('#about').attr('class') == 'on'){
-	 
-			//        $('#about').toggleClass('on');
-			 
-			//     } else {
-
-			//     	console.log("Nothing to do here")
-
-			//     }
+<html>
+<head>
+
+	<title>Projects by Daniil Ashtaev</title>
+
+	<meta name="description" content="Selected design works up to 2018.">
+	<meta name="keywords" content="Ashtaev, design, portfolio, work, photography, posters, branding, russian, freelance, Cooper Union, New York, NYC">
+	<meta name="author" content="Daniil Ashtaev">
+
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+
+	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:200,300,400,500" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Chivo:300,400,700" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+	<header>
+		<!-- <h1><a href="../index.html">Daniil Ashtaev</a></h1> -->
+		<h1><a href=""><span id="eng-name">Daniil Ashtaev</span><span id="rus-name">Даниил Аштаев</span></a></h1>
+		<nav>
+			<ul class="nav"> 
+				<li class="projects-button">projects</li>
+				<li class="about-button">about</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="wrapper">
+
+
+		<section class="project-gallery">
+		</section>
+
+		<section class="project-view">
+				<div class="project-content"></div>
+				<div class="copyright"></div>
+				<div class="back-button">← Back</div>
+		</section>
+
+
+		<section class="about">
+			<div class="about-content"></div>
+		</section>
+
+	</div>
+
+	<footer>
+		<p>ashtaevd@gmail.com</p>
+		<p>Cryptocurrency OK</p>
+	</footer>
+
+	<!-- <footer>
+		<p>© Daniil Ashtaev, forever and always<p>
+	</footer> -->
+
+	<script>
+
+		var projectsList = 
+			{
+				"projects": [
+
+					{
+					"projectTitle" : "The Inquisitive Identity",
+					"thumbnailImage" : "https://pp.userapi.com/c824204/v824204651/860a4/BQb-QQMzl2M.jpg",
+					"heroImage" : "https://pp.userapi.com/c824204/v824204651/8607c/qYKdlxjRuxc.jpg",
+					"descriptionText" : "I was approached to design an identity based on the feeling of curiosity. It was supposed to be a club of sorts. A club that is mysteriously alluring, but inviting at the same time. </br></br> Using metaphors, riddles, odd materials and other stratagems, I created a system that keeps the viewer inquisitive and lures them in.",
+					"detailImages" : 
+						{
+						"image1" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/8607c/qYKdlxjRuxc.jpg",
+							"caption" : "Invitation via business card"
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/86086/kV5Aip2pHGI.jpg",
+							"caption" : "Business card resolved"
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/860a4/BQb-QQMzl2M.jpg",
+							"caption" : "The Inquisitive—photographic representation"
+							},
+						"image4" : {
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/86090/vNB3Mvl2SUE.jpg",
+							"caption" : "Semi-revealing envelope"
+							},
+						"image5" : {
+							"imageLink" : "https://pp.userapi.com/c841026/v841026651/67ea7/DEt-kmnsvHo.jpg",
+							"caption" : "Branded letter opener cut from a found piece of steel"
+							},
+						"image6" : {
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/86072/TTkyhpqOYk4.jpg",
+							"caption" : "Forlorn invitation letter"
+							},
+						"image7" : {
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/8609a/T-Vn-koVLdY.jpg",
+							"caption" : " "
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Lake Baikal: The Lore of&nbspthe&nbspLand",
+					"thumbnailImage" : "https://pp.userapi.com/c834201/v834201075/8164b/iPqHgeH8Mno.jpg",
+					"heroImage" : "https://pp.userapi.com/c824202/v824202075/87f37/xHs4HtPET34.jpg",
+					"descriptionText" : "In the summer of 2016, I went on an expedition to Lake Baikal in Siberia in search of myths and legends of the region. </br></br> Done as part of the Menschel Fellowship, a grant for projects of expansive inquiry, my project concluded with an exhibition at The Cooper Union. It featured the sacred landscapes I encountered, as well as stories told by the local shaman, whom I interviewed about traditions and folklore of Lake Baikal.",
+					"detailImages" : 
+						{
+						"image1" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c834201/v834201075/81654/ZXqg0SgxZd8.jpg",
+							"caption" : " "
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87ea1/zmD4n9Po2ew.jpg",
+							"caption" : " "
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87eaa/fFHG5uy693A.jpg",
+							"caption" : " "
+							},
+						"image4" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87ebc/fTQ20fcNeP4.jpg",
+							"caption" : " "
+							},
+						"image5" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87eb3/6DQKYSWdcVs.jpg",
+							"caption" : " "
+							},
+						"image6" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87ee2/QlCL5bhz4Bk.jpg",
+							"caption" : " "
+							},
+						"image7" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87eec/EnKq8gCCCxA.jpg",
+							"caption" : " "
+							},
+						"image8" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87ef6/7DC5OJgzj0M.jpg",
+							"caption" : " "
+							},
+						"image9" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87f00/xfrZ0nUe8D8.jpg",
+							"caption" : " "
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Resolve It",
+					"thumbnailImage" : "https://pp.userapi.com/c824202/v824202651/850b2/vdmwGFfyK6g.jpg",
+					"heroImage" : "https://pp.userapi.com/c824202/v824202651/8508c/YR7LoNPBtI8.jpg",
+					"descriptionText" : "Beginning with the gameplay and proceeding to visual design, I created a card game that relies on storytelling and finding clues to resolve mysteries. </br></br> Inspired by 20th century pocket novels, I combined type of that era with crude paper collages to illustrate the game’s peculiar narratives.",
+					"detailImages" : 
+						{
+						"image1" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824202/v824202651/85078/q2jFntI-TcQ.jpg",
+							"caption" : "Card box"
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824202/v824202651/85082/5l77vlA1Ml8.jpg",
+							"caption" : "Story card selection"
+							},
+						"image3" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824202/v824202651/850a0/UqnBcZ0Orj0.jpg",
+							"caption" : "Instruction sheet"
+							},
+						"image4" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824202/v824202651/85096/5i0MJqGvKG8.jpg",
+							"caption" : "One of the role cards"
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "General Purpose",
+					"thumbnailImage" : "https://pp.userapi.com/c841533/v841533835/5ad28/iUcUks6R1e8.jpg",
+					"heroImage" : "https://i.cubeupload.com/VRQoCw.gif",
+					"descriptionText" : "A book showcasing a strange collection of ephemera with language directed at the reader.",
+					"detailImages" : 
+						{
+						"image1" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad28/iUcUks6R1e8.jpg",
+							"caption" : " "
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad3c/fhJFjBfz9YA.jpg",
+							"caption" : " "
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad32/YbAZzAFJ2fY.jpg",
+							"caption" : " "
+							},
+						"image4" : {
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad5a/saHPOvD6XCw.jpg",
+							"caption" : "Objects that beckoned further display took up extra spreads"
+							},
+						"image5" : {
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad50/FftkAmHW0BE.jpg",
+							"caption" : " "
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Next Mosh Website&nbspRedesign",
+					"thumbnailImage" : "https://pp.userapi.com/c841533/v841533464/5b115/wrMboakIiOA.jpg",
+					"heroImage" : "https://pp.userapi.com/c841533/v841533464/5b115/wrMboakIiOA.jpg",
+					"descriptionText" : "Nextmosh is a metal- and hardcore- show herald in the New York State area. They had a functional website that needed a new look. </br></br> Taking metal show posters and merchandise as the starting point, I redesigned their identity and the website, including functionality of the event calendar.",
+					"detailImages" : 
+						{
+						"image1" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c841533/v841533464/5b115/wrMboakIiOA.jpg",
+							"caption" : "Local Band Index"
+							}
+						}
+					}
+
+				]
+			}
+
+		// create gallery thumbnails
+		for (i = 1; i <= projectsList["projects"].length; i++ ) {
+
+			var eachProject = projectsList["projects"][i-1];
+
+			var projectTitle = eachProject['projectTitle'];
+			var thumbnailImage = eachProject['thumbnailImage'];
+			var detailImages = eachProject['detailImages'];
+
+			// create new thumbnail with background image and title
+			var newThumb = 
+				'<div class="project-thumbnail">' +
+					'<div class="thumbnail-content" style="background-image: url(' + thumbnailImage + ');"></div>' +
+					'<h3 class="thumbnail-title">' + projectTitle + '</h3>' +
+				'</div>';
+
+			//add the thumbnail to the project gallery	
+			$('.project-gallery').append(newThumb);
+
+		} // end of projects loop
+
+		// add empty div
+		$(".project-gallery").append('<div class="project-thumbnail inactive"></div>');
+
+
+
+		// project-view
+		$('.project-thumbnail').click(function(){
+
+			//get index of the clicked thumbnail
+			var projectIndex = $(this).index();
+			var clickedProject = projectsList["projects"][projectIndex];
+
+			var projHeroImage = clickedProject['heroImage'];
+			var projProjectTitle = clickedProject['projectTitle'];
+			var projDescriptionText = clickedProject['descriptionText'];
+			var projDetailImages = clickedProject['detailImages'];
+
+			// add hero, title and description to .project-content
+			var newProjectIntro = 
+				'<div class="hero-box">' +
+					'<img class="hero-image" src="' + projHeroImage + '"/>' +
+				'</div>' +
+				'<div class="description-box">' +
+					'<h3 class="project-title">' + projProjectTitle + '</h3>' +
+					'<p class="project-description">' + projDescriptionText + '</p>' + 
+				'</div>';
+			$(".project-content").append(newProjectIntro);	
+
+			// add detail images to .project-content
+			for (k = 1; k <= Object.keys(projDetailImages).length; k++) {
+
+				var newDetailImage = 
+					'<div class="detail-box">' +
+						'<img class="detail-image" src="' + projDetailImages["image" + k]["imageLink"] + '"/>' +
+						'<p class="caption">' + projDetailImages["image" + k]["caption"] + '</p>' +
+					'</div>';
+				$(".project-content").append(newDetailImage);
+
+			}
+
+			// turn on .project-view and turn off .project-gallery
+			window.scrollTo(0, 0);
+			$('.project-view').toggleClass('view-on');
+			$(".project-gallery").hide();
+
+		});
+
+
+
+		// go back to gellery view
+		$('.back-button').click(function(){
+
+			window.scrollTo(0, 0);
+			$('.project-view').toggleClass('view-on');
+			// $('.project-gallery').toggleClass('.invisible');
+			$(".project-gallery").show();
+			$(".project-content").empty();
 			
-			// };
+		});
 
-		</script>
+	</script>
 
+</body>
 
-		<!-- THREE.js -->
-		<script>
-
-			var camera, controls, scene, renderer;
-
-			var desks = [];
-			var colors = [];
-
-			var mesh;
-			var daniil;
-
-			init();
-			//render();
-			animate();
-
-			function init() {
-
-				renderer = new THREE.WebGLRenderer();
-				renderer.setClearColor( 0xffffff );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				document.body.appendChild( renderer.domElement );
-
-				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 5000 );
-				//camera.position.x = 100;
-				camera.position.z = 300;
-
-				controls = new THREE.OrbitControls( camera, renderer.domElement );
-				//controls.addEventListener( 'change', render ); // remove when using animation loop
-				// enable animation loop when using damping or autorotation
-				controls.enableDamping = true;
-				controls.dampingFactor = 0.5;
-				//controls.enableZoom = false;
-				controls.minDistance = 100;
-				controls.maxDistance = 800;
-
-				scene = new THREE.Scene();
-				scene.fog = new THREE.Fog( 0xffffff, 1, 1000 );
-
-				// var light = new THREE.AmbientLight( 0x404040 ); // soft white light
-				// scene.add( light );
-
-				var daniilTexture = new THREE.TextureLoader().load( 'textures/dirtyd.jpg' );
-				var daniilGeometry = new THREE.BoxBufferGeometry( 48, 48, .5 );
-				var daniilMaterial = new THREE.MeshBasicMaterial( { map: daniilTexture } );
-				daniil = new THREE.Mesh ( daniilGeometry, daniilMaterial );
-
-				daniil.rotation.x = Math.random() * 2 * Math.PI;
-				daniil.rotation.y = Math.random() * 2 * Math.PI;
-
-				scene.add( daniil );
-
-				var geometry = new THREE.BoxBufferGeometry( 48, 24, 3 );
-
-				for ( var i = 0; i < desks.length; i++ ) {
-				
-					var colorName = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-					var material = new THREE.MeshBasicMaterial( { color: colorName } );	
-
-				}
-
-
-				var radius = 1100;
-				var nDesks = 1000;
-
-				for ( var i = 0; i < nDesks; i++) {
-
-					mesh = new THREE.Mesh ( geometry, material );
-					scene.add( mesh );
-					
-					mesh.position.set( radius/2 - radius * Math.random(), 
-									radius/2 - radius * Math.random(), radius/2 - radius * Math.random());
-
-					mesh.rotation.x = Math.random() * 2 * Math.PI;
-					mesh.rotation.y = Math.random();
-
-					desks.push( mesh );
-
-				}
-
-				//mesh = new THREE.Mesh( geometry, material );
-				//scene.add( mesh );
-				
-				window.addEventListener( 'resize', onWindowResize, false );
-
-
-			}
-
-			function onWindowResize() {
-
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-
-				renderer.setSize( window.innerWidth, window.innerHeight );
-
-			}
-
-			function animate() {
-
-				requestAnimationFrame( animate );
-
-				controls.update(); // required if controls.enableDamping = true, or if controls.autoRotate = true
-
-				render();
-
-			}
-
-			function render() {
-
-				//requestAnimationFrame( animate );
-				daniil.rotation.x += 0.005;
-				daniil.rotation.y += 0.01;
-				renderer.render( scene, camera );
-
-			}
-
-			console.log ( desks.length + " desks in order." );
-
-		</script>
-
-		
-
-	</body>
 </html>
