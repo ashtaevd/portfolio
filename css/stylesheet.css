@@ -301,7 +301,7 @@ footer {
 
 /*------Mobile------*/
 
-@media screen and (max-width:320px){
+@media screen and (max-width:768px){
 
 	html, body {
 
