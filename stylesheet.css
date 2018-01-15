@@ -1,0 +1,400 @@
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,iframe,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+
+#element::-webkit-scrollbar { 
+    display: none; 
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+
+body { 
+	font-family: "Chivo", sans-serif;
+	font-size: 1em;
+	-webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+	/*Google: Oswald, Archivo Narrow*/
+
+}
+
+/*------Header------*/
+
+header {
+	position: fixed;
+	top:0;
+	/*margin: 0;*/
+	width: 100%;
+	height: 125px;
+	font-size: 200%;
+	background-color: rgba(255,255,250,.5) ;
+	border-bottom: 1px solid black;
+	/*z-index: 500;*/
+	/*margin: 25px 0px 0px 25px;*/
+}
+
+h1 {
+	display:inline-block;
+	font-size: 100%;
+	margin: 25px 0px 0px 25px;
+}
+
+a {
+	color:inherit;
+	text-decoration: inherit;
+}
+
+#eng-name {
+	display: inline-block;
+	z-index: 1
+}
+
+a:hover #eng-name{
+	display: none;
+}
+
+ #rus-name {
+	display: none;
+}
+
+a:hover #rus-name {
+	display: inline-block;
+	z-index: 2
+}
+
+nav {
+	float:right;
+	display:inline-block;
+	margin: 25px 25px 0px 0px;
+}
+
+nav li {
+	display:inline;
+	margin-left: 50px;
+	cursor: pointer;
+}
+
+nav li:hover {
+
+	text-decoration: underline;
+	color: blue;
+
+}
+
+/*------Content------*/
+
+.wrapper {
+
+	/*position: relative;
+	top: 0;
+    right: 0;
+    bottom: 0;
+	left: 0;*/
+	overflow: auto;
+	margin: 125px 25px 0px 25px;
+}
+
+p {
+
+	font-size: 125%;
+	line-height: 1.5em;
+	/*margin: 0 0 15px 0;*/
+
+}
+
+.project-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	z-index: 0;
+	margin-top: 25px;
+	/*position: absolute;*/
+}
+
+.project-thumbnail {
+	display: inline;
+	/*position: relative;*/ /*turn this on if positioning gets fucked up*/
+	width:32%;
+	margin-bottom: 25px;
+	cursor: pointer;
+	transition: all .1s ease-in-out;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+}
+
+.project-thumbnail:hover {
+	text-indent: 5px;
+	color: blue;
+}
+
+.thumbnail-image {
+	display: block;
+	max-width: 100%;
+    max-height: 100%;
+	/*max-height: 63%*/
+	height: auto;
+}
+
+.thumbnail-content {
+	padding-bottom: 63%;
+	background-image: url("img/identity2.jpg");
+	background-position: center center;
+	background-size: cover;
+	font-size: 150%;
+	font-weight: 700;
+	/*position: relative;*/
+	text-align: center;
+	/*vertical-align: middle;*/
+	/*line-height: 63%;*/
+}
+
+.thumbnail-title {
+	margin-top: 6px;
+	display: block;
+	font-size: 125%;
+	/*font-size: 1.5vw; */
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.project-thumbnail.inactive {
+	pointer-events: none;
+	margin:0;
+}
+
+/*------Project View------*/
+
+.invisible {
+	display: none;
+	opacity:0;
+}
+
+.project-view {
+	display: none;
+	/*opacity: 0;*/
+/*	transition: opacity 1s ease-in-out;
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	-ms-transition: opacity 1s ease-in-out;*/
+}
+
+.view-on {
+	display: block;
+}
+
+.hero-box {
+	z-index: 100;
+	width: 100%;
+}
+
+.hero-image {
+	display: block;
+	max-width: 100%;
+    max-height: 100%;
+	/*max-height: 63%*/
+	margin: 0 auto;
+	height: auto;
+}
+
+.description-box {
+	/*text-align: center;*/
+	margin: 50px 20% 50px 20%;
+}
+
+.project-title {
+	display: inline-block; /*new*/
+	float: left; /*new*/
+	width:48%; /*new*/
+	font-size: 150%; 
+	font-weight: 700;
+}
+
+.project-description {
+	display: inline-block; /*new*/
+	float: right; /*new*/
+	width:50%; /*new*/
+	/*margin-top: 25px;*/
+	/*font-size: 100%;*/
+	font-weight: 400;
+	color: #939393;
+	margin-bottom: 50px; /*new*/
+}
+
+.detail-box {
+	width:60%;
+	margin:0 20% 25px 20%;
+}
+
+.caption {
+	margin-top: 3px;
+	font-size: 80%;
+	color: #939393;
+}
+
+/*.caption:after {
+	content:' ';
+}*/
+
+.back-button {
+	position: fixed;
+    z-index: 20;
+    bottom: 53px;
+    left: 6%;
+    font-size: 125%;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+   -moz-transition: all .1s ease-in-out;
+   -webkit-transition: all .1s ease-in-out;
+}
+
+.back-button:hover {
+	color: blue;
+	text-indent: -5px;
+}
+
+/*.project-view:nth-last-child(2) {
+	margin-bottom: 50px;
+}*/
+
+.copyright {
+	display:block;
+	margin: 75px 20% 0 20%;
+	text-align: center;
+	color: #939393;
+	opacity: .5;
+}
+
+.copyright:before {
+	display:block;
+	content: 'All design, photography and delight is original.';
+}
+.copyright:after{
+	display:block;
+	content: '© Daniil Ashtaev, forever and always.';
+}
+
+/*------Footer------*/
+
+footer {
+	margin: 75px 25px 0 25px;
+	padding: 50px 0 50px 0;
+	text-align: center;
+	border-top: 1px solid black;
+}
+
+/*------Tablet------*/
+
+@media screen and (max-width:1200px){
+
+	.project-thumbnail {
+		display: inline;
+		width:49%;
+	}
+
+}
+
+/*------Mobile------*/
+
+@media screen and (max-width:768px){
+
+	html, body {
+
+/*		overflow-x: hidden;
+		overflow-y: hidden;*/
+
+	}
+
+	body {
+		font-size: 1em;
+	}
+
+	header {
+		/*margin: 0;*/
+		padding-bottom: 25px;
+		width: 100%;
+		font-size: 160%;
+		height: 100px;
+		/*padding-bottom: 125px;*/
+	}
+
+	h1 {
+		display: block;
+		text-align: center;
+		/*font-size: 100%;*/
+		/*margin-right: auto;*/
+		/*margin-left:  auto;*/
+		margin: 12.5px 25px 0px 25px;
+	}
+
+	nav {
+		float: none;
+		display:block;
+		margin: 12.5px 25px 0 25px;
+	}
+
+	nav li {
+		float:left;
+		margin: 0;
+		/*display:block;*/
+	}
+
+	.about-button {
+		/*display:block;*/
+		float: right;
+		margin-left: 0px;
+	}
+
+	.project-gallery {
+		overflow: scroll;
+		margin-top: 0;
+	}
+
+	.project-thumbnail {
+		width:100%;
+		margin-bottom: 25px;
+	}
+
+	.description-box {
+		margin: 50px 0 50px 0;
+		text-align: center;
+	}
+
+	.project-title {
+		display: block; /*new*/
+		float:none;
+		width:100%; /*new*/
+		margin-bottom: 25px;
+		font-size: 150%; 
+	}
+
+	.project-description {
+		display: block; /*new*/
+		float: none;
+		width: 90%; /*new*/
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 50px; /*new*/
+	}
+
+	.detail-box {
+		width:100%;
+		margin:0 0 25px 0;
+	}
+
+	.back-button:hover {
+		color: initial;
+		text-indent: 0;
+	}
+
+	.back-button:active {
+		color: blue;
+/*		text-indent: -5px;*/
+	}
+
+}
