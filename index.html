@@ -31,6 +31,27 @@
 		</nav>
 	</header>
 
+	<div id="about">
+		
+		<p>Greetings!</p>
+		<p>I have many things to say, but...</p>
+		<p>Born in <span class="tooltip">Ulan-Ude <span class="tooltiptext ulan-ude"></span></span> 
+		and raised in <span class="tooltip">Moscow<span class="tooltiptext moscow"></span></span>, 
+		I now reside in 
+		<span class="tooltip">New York<span class="tooltiptext new-york"></span></span>. 
+		Currently, I work at Redscout, a strategy and design agency.</p>
+		<p>I am a recent graduate of The Cooper Union,<sup>'17</sup> where I have learned to embrace design not limited to graphics alone. My work ranges from flat to physical, from written words to chopped wood.</p>
+		<p>As of today, I have <span class="tooltip"><span class="workYears"></span> years <span class="tooltiptext">More precisely, <span class="workDays"></span> days. From the beginning of my first internship, that&nbsp;is.</span></span> of professional experience in grapic design, spanning identity, web design, animation and so on and so forth.</p>
+		<p>Print and digital.
+		World and web.</p>
+		<p>Please, write to: </br>
+		ashtaevd@gmail.com</p>
+		<p>Farewell!</p>
+
+		<div class="close-button">Close →</div>
+				
+	</div>
+
 	<div class="wrapper">
 
 
@@ -39,26 +60,67 @@
 
 		<section class="project-view">
 				<div class="project-content"></div>
-				<div class="copyright"></div>
+				<div class="copyright">
+					<p>All design, photography and delight is original.</p>
+					<p>© Daniil Ashtaev, forever and always.</p>
+				</div>
 				<div class="back-button">← Back</div>
-		</section>
-
-
-		<section class="about">
-			<div class="about-content"></div>
 		</section>
 
 	</div>
 
 	<footer>
+		<h2>Graphic designer, elsewhere and NYC</h2>
 		<p>ashtaevd@gmail.com</p>
 		<p>Cryptocurrency OK</p>
 	</footer>
 
-	<!-- <footer>
-		<p>© Daniil Ashtaev, forever and always<p>
-	</footer> -->
+	<!-- About section script -->
+	<script>
 
+		$('.about-button').click(function(){
+
+			$('#about').toggleClass('aboutOn');
+
+		});
+
+		$('.close-button').click(function(){
+
+			$('#about').toggleClass('aboutOn');
+
+		});
+
+		//---professional practice duration
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+
+		if(dd<10) {
+		    dd='0'+dd
+		} 
+
+		if(mm<10) {
+		    mm='0'+mm
+		} 
+
+		today = mm+'.'+dd+'.'+yyyy;
+
+		var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+		var firstDate = new Date(2015,08,17);
+		var secondDate = new Date(yyyy,mm,dd);
+
+		var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+		$("span.workDays").text(diffDays);
+
+		workYears = diffDays /= 365;
+		workYears = Math.round(workYears * 100) / 100;
+
+		$("span.workYears").text(workYears);
+
+	</script>
+
+	<!-- Content population script -->
 	<script>
 
 		var projectsList = 
@@ -101,6 +163,43 @@
 						"image7" : {
 							"imageLink" : "https://pp.userapi.com/c824204/v824204651/8609a/T-Vn-koVLdY.jpg",
 							"caption" : " "
+							}
+						}
+					},
+
+
+					{
+					"projectTitle" : "General Purpose",
+					"thumbnailImage" : "https://pp.userapi.com/c841533/v841533835/5ad28/iUcUks6R1e8.jpg",
+					"heroImage" : "https://i.cubeupload.com/VRQoCw.gif",
+					"descriptionText" : "The book stands as a selection of objects that were picked and described in detail with their stories. Its writing is vaguely direct, as if targeted at the reader, even suggesting that one were in possession of these items. </br></br> My aim with the ambiguous language was to create a feeling of being assigned on a mission or embarking on a journey, thus entering a story of adventure.",
+					"detailImages" : 
+						{
+						"image1" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824504/v824504276/89082/jdC0P15pGb4.jpg",
+							"caption" : " "
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad28/iUcUks6R1e8.jpg",
+							"caption" : " "
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad32/YbAZzAFJ2fY.jpg",
+							"caption" : " "
+							},
+						"image4" : {
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad5a/saHPOvD6XCw.jpg",
+							"caption" : "Objects that beckoned further display were revealed in extra spreads"
+							},
+						"image5" : {
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad50/FftkAmHW0BE.jpg",
+							"caption" : " "
+							},
+						"image6" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504276/8906f/NMUHUxoa8RY.jpg",
+							"caption" : "Last colophon of 2017"
 							}
 						}
 					},
@@ -154,10 +253,38 @@
 					},
 
 					{
+					"projectTitle" : "Of Light and Letter",
+					"thumbnailImage" : "https://pp.userapi.com/c841123/v841123887/5db6b/_y3iSzzlin4.jpg",
+					"heroImage" : "https://pp.userapi.com/c841123/v841123887/5db57/402hmQeWlmY.jpg",
+					"descriptionText" : "Exploring planes of graphic design, I concluded my studies with this senior exhibition. </br></br> The seminal piece with photographs looping around a weaving wooden structure had hidden text which read “there is design that can’t be thought of.” </br></br> A beacon in my practice, the motto emphasizes the limitlessness of design and leads the way to its uncharted territories.",
+					"detailImages" : 
+						{
+						"image1" : {
+							"imageLink" : "https://pp.userapi.com/c841123/v841123887/5db61/3tZsuwCFpGY.jpg",
+							"caption" : " "
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c841123/v841123887/5db6b/_y3iSzzlin4.jpg",
+							"caption" : "Concealed phrase that read, “There is design that can’t be thought of”"
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c841123/v841123887/5db75/Ieb0auVTlq4.jpg",
+							"caption" : " "
+							},
+						"image4" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c834101/v834101887/874cd/t14pG1j-yPQ.jpg",
+							"caption" : " "
+							}
+						}
+					},
+
+					{
 					"projectTitle" : "Resolve It",
 					"thumbnailImage" : "https://pp.userapi.com/c824202/v824202651/850b2/vdmwGFfyK6g.jpg",
 					"heroImage" : "https://pp.userapi.com/c824202/v824202651/8508c/YR7LoNPBtI8.jpg",
-					"descriptionText" : "Beginning with the gameplay and proceeding to visual design, I created a card game that relies on storytelling and finding clues to resolve mysteries. </br></br> Inspired by 20th century pocket novels, I combined type of that era with crude paper collages to illustrate the game’s peculiar narratives.",
+					"descriptionText" : "Beginning with the gameplay and proceeding to visual design, I created a card game that relies on storytelling and finding clues to resolve mysteries. </br></br> Inspired by 20th century pocket novels, I combined type of that era with crude paper collages to illustrate the game’s peculiar narratives. </br></br> Release date TBA in 2018.",
 					"detailImages" : 
 						{
 						"image1" : 
@@ -184,48 +311,103 @@
 					},
 
 					{
-					"projectTitle" : "General Purpose",
-					"thumbnailImage" : "https://pp.userapi.com/c841533/v841533835/5ad28/iUcUks6R1e8.jpg",
-					"heroImage" : "https://i.cubeupload.com/VRQoCw.gif",
-					"descriptionText" : "A book showcasing a strange collection of ephemera with language directed at the reader.",
+					"projectTitle" : "Next Mosh Website&nbspRedesign",
+					"thumbnailImage" : "https://pp.userapi.com/c824504/v824504276/890ba/Rr1AnR36hrQ.jpg",
+					"heroImage" : "https://pp.userapi.com/c824504/v824504276/890fd/vMOkec3WwHM.jpg",
+					"descriptionText" : "Nextmosh is a metal- and hardcore- show herald in the New York State area. They had a functional website that needed a new look. </br></br> Taking metal show posters and merchandise as the starting point, I redesigned their identity and the website, including functionality of the event calendar.",
 					"detailImages" : 
 						{
-						"image1" : 
-							{
-							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad28/iUcUks6R1e8.jpg",
-							"caption" : " "
+						"image1" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504276/890f3/vTD7b70p9Io.jpg",
+							"caption" : "Preliminary site map"
 							},
 						"image2" : 
 							{
-							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad3c/fhJFjBfz9YA.jpg",
-							"caption" : " "
+							"imageLink" : "https://pp.userapi.com/c824504/v824504276/890c4/Gs4aUxCdiCs.jpg",
+							"caption" : "Local band profile"
 							},
 						"image3" : {
-							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad32/YbAZzAFJ2fY.jpg",
-							"caption" : " "
+							"imageLink" : "https://pp.userapi.com/c824504/v824504276/890b0/0Dcno3vfb_w.jpg",
+							"caption" : "News article"
 							},
-						"image4" : {
-							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad5a/saHPOvD6XCw.jpg",
-							"caption" : "Objects that beckoned further display took up extra spreads"
-							},
-						"image5" : {
-							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad50/FftkAmHW0BE.jpg",
-							"caption" : " "
+						"image4" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c841533/v841533464/5b115/wrMboakIiOA.jpg",
+							"caption" : "Local band index"
 							}
 						}
 					},
 
 					{
-					"projectTitle" : "Next Mosh Website&nbspRedesign",
-					"thumbnailImage" : "https://pp.userapi.com/c841533/v841533464/5b115/wrMboakIiOA.jpg",
-					"heroImage" : "https://pp.userapi.com/c841533/v841533464/5b115/wrMboakIiOA.jpg",
-					"descriptionText" : "Nextmosh is a metal- and hardcore- show herald in the New York State area. They had a functional website that needed a new look. </br></br> Taking metal show posters and merchandise as the starting point, I redesigned their identity and the website, including functionality of the event calendar.",
+					"projectTitle" : "Creating a Presence",
+					"thumbnailImage" : "https://pp.userapi.com/c840432/v840432316/444c3/PRRllEeYSf8.jpg",
+					"heroImage" : "https://pp.userapi.com/c840623/v840623316/4555c/wutpdKMoGLk.jpg",
+					"descriptionText" : "In this project, two of my peers and I committed to giving an identity to the empty storefront on Stuyvesant Street. </br></br> With few materials and some code, we created a curious, whimsical presence. It attentively watched over the passersby from a place that usually went overlooked and unnoticed. </br></br> Passersby who did notice had an amusing encounter with these quiet eyes, each responding in their own way.",
 					"detailImages" : 
 						{
-						"image1" : 
+						"image1" : {
+							"imageLink" : "https://pp.userapi.com/c840623/v840623316/45548/xC56KpcE7hA.jpg",
+							"caption" : " "
+							},
+						"image2" : 
 							{
-							"imageLink" : "https://pp.userapi.com/c841533/v841533464/5b115/wrMboakIiOA.jpg",
-							"caption" : "Local Band Index"
+							"imageLink" : "https://pp.userapi.com/c840623/v840623316/45552/4ma-NEJR0Os.jpg",
+							"caption" : " "
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c840623/v840623316/45566/3p0hsrs8YS8.jpg",
+							"caption" : "Where the magic happened"
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Preserving the US Constitution",
+					"thumbnailImage" : "https://pp.userapi.com/c824504/v824504887/87c19/1wM-0a6Zhmw.jpg",
+					"heroImage" : "https://pp.userapi.com/c824504/v824504887/87c37/2g-J5y5FcH4.jpg",
+					"descriptionText" : "Starting with the notion that the founding tenets are timeless and imperishable, I attributed those qualities to the physical book. </br></br> It features a fire-proof aluminum encasing, water- and tear-proof book cover of Tyvek, and pages coated in fire retardant, altogether making the book nearly invincible. The purity of contents was left unhindered to avoid distraction. </br></br> The encasing and book cover harken back to dry, clear-cut designs on military rations, which intrinsically last for ages.",
+					"detailImages" : 
+						{
+						"image1" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504887/87c19/1wM-0a6Zhmw.jpg",
+							"caption" : "Aluminum encasing"
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824504/v824504887/87c23/0OISPYMBtlQ.jpg",
+							"caption" : "Preamble to the United States Constitution"
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504887/87c2d/1hGUqFawKX4.jpg",
+							"caption" : "Interior layout"
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Select Infographics",
+					"thumbnailImage" : "https://pp.userapi.com/c824504/v824504335/89ff8/QAdnv0yw99c.jpg",
+					"heroImage" : " ",
+					"descriptionText" : "A selection of infographic posters on various subjects: from reality of Soviet space dogs to fiction of American groundhogs.",
+					"detailImages" : 
+						{
+						"image1" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504335/8a00a/UhJj5IU9bWo.jpg",
+							"caption" : "Soviet Dogs in Space, a commemorative infographic about the late canine comrades"
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824504/v824504335/89ff8/QAdnv0yw99c.jpg",
+							"caption" : "The most utilitarian, Wall Anchor Strength chart"
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504335/8a01e/2TNpuT8UyYs.jpg",
+							"caption" : "Groundhog Day timeline (attn: spoilers)"
+							},
+						"image4" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824504/v824504335/8a039/KoT1TJGg29E.jpg",
+							"caption" : "Map of local broken lamp posts, as recorded on a walk of May 2, 2016 in East Village"
 							}
 						}
 					}
@@ -308,7 +490,6 @@
 
 			window.scrollTo(0, 0);
 			$('.project-view').toggleClass('view-on');
-			// $('.project-gallery').toggleClass('.invisible');
 			$(".project-gallery").show();
 			$(".project-content").empty();
 			
