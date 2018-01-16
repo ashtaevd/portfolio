@@ -31,7 +31,7 @@ header {
 	font-size: 200%;
 	background-color: rgba(255,255,250,.5) ;
 	border-bottom: 1px solid black;
-	/*z-index: 500;*/
+	z-index: 500;
 	/*margin: 25px 0px 0px 25px;*/
 }
 
@@ -87,21 +87,13 @@ nav li:hover {
 
 .wrapper {
 
-	/*position: relative;
-	top: 0;
-    right: 0;
-    bottom: 0;
-	left: 0;*/
 	overflow: auto;
 	margin: 125px 25px 0px 25px;
 }
 
 p {
-
-	font-size: 125%;
-	line-height: 1.5em;
-	/*margin: 0 0 15px 0;*/
-
+	/*font-size: 100%;*/
+	line-height: 150%;
 }
 
 .project-gallery {
@@ -177,7 +169,7 @@ p {
 .project-view {
 	display: none;
 	/*opacity: 0;*/
-/*	transition: opacity 1s ease-in-out;
+	/*transition: opacity 1s ease-in-out;
 	-webkit-transition: opacity 1s ease-in-out;
 	-moz-transition: opacity 1s ease-in-out;
 	-o-transition: opacity 1s ease-in-out;
@@ -210,20 +202,18 @@ p {
 .project-title {
 	display: inline-block; /*new*/
 	float: left; /*new*/
-	width:48%; /*new*/
+	width:40%; /*new*/
 	font-size: 150%; 
 	font-weight: 700;
 }
 
 .project-description {
-	display: inline-block; /*new*/
-	float: right; /*new*/
-	width:50%; /*new*/
-	/*margin-top: 25px;*/
-	/*font-size: 100%;*/
-	font-weight: 400;
+	display: inline-block; 
+	float: right;
+	width: 60%;
+	font-size: 125%;
 	color: #939393;
-	margin-bottom: 50px; /*new*/
+	margin-bottom: 50px;
 }
 
 .detail-box {
@@ -236,10 +226,6 @@ p {
 	font-size: 80%;
 	color: #939393;
 }
-
-/*.caption:after {
-	content:' ';
-}*/
 
 .back-button {
 	position: fixed;
@@ -258,34 +244,159 @@ p {
 	text-indent: -5px;
 }
 
-/*.project-view:nth-last-child(2) {
-	margin-bottom: 50px;
-}*/
-
 .copyright {
 	display:block;
 	margin: 75px 20% 0 20%;
 	text-align: center;
 	color: #939393;
 	opacity: .5;
+	font-size: 125%;
 }
 
-.copyright:before {
-	display:block;
-	content: 'All design, photography and delight is original.';
+/*------About------*/
+
+#about p {
+	margin-bottom: 25px;
 }
-.copyright:after{
-	display:block;
-	content: '© Daniil Ashtaev, forever and always.';
+
+#about {
+
+	position: fixed;
+	right: -50%;
+	z-index: 25;
+	width: 0%;
+	height: 100%;
+	padding: 150px 25px 25px 25px;
+	border-left: 1px solid black;
+	font-size: 150%;
+	margin-top: -125px;
+	overflow: scroll;
+	background-color: rgb(255,255,255);
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+
+}
+
+#about::-webkit-scrollbar {
+	
+	display: none;
+
+}
+
+#about.aboutOn {
+
+	right:0;
+	width: 50%;
+
+}
+
+/*#about.aboutOn * {
+
+	opacity: 1;
+
+}*/
+
+/*Exponent Text ('17)*/
+sup {
+
+	/*font-size:.3em;*/
+	left:100px;
+
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 2px solid blue;
+    padding-bottom: -20px;
+    border-color: rgb(140,140,140);
+    opacity: 1;
+}
+
+.tooltip .tooltiptext {
+
+    visibility: hidden;
+    width: 140px;
+    background-color: white;
+    color: blue;
+    text-align: center;
+    padding: 5px 7px;
+    border: 1px solid black;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -70px;
+    opacity: 0;
+    font-size: 70%;
+    line-height: 115%
+
+}
+
+.tooltip:hover .tooltiptext {
+
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.tooltip .tooltiptext.ulan-ude{
+
+	background-image: url("textures/lenin.jpg");
+	background-size: 130px 162px;
+	width: 130px;
+	height: 162px;
+	padding: 0;
+
+}
+
+.tooltip .tooltiptext.moscow{
+
+	background-image: url("textures/moscow.jpg");
+	background-size: 130px 162px;
+	width: 130px;
+	height: 162px;
+	padding: 0;
+
+}
+
+.tooltip .tooltiptext.new-york{
+
+	background-image: url("textures/new-york.jpg");
+	background-size: 130px 162px;
+	width: 130px;
+	height: 162px;
+	padding: 0;
+
+}
+
+.close-button {
+	position: absolute;
+    z-index: 20;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+   -moz-transition: all .1s ease-in-out;
+   -webkit-transition: all .1s ease-in-out;
+}
+
+.close-button:hover {
+	color: blue;
+	text-indent: -5px;
 }
 
 /*------Footer------*/
 
 footer {
-	margin: 75px 25px 0 25px;
+	margin-top: 75px;
 	padding: 50px 0 50px 0;
-	text-align: center;
 	border-top: 1px solid black;
+	text-align: center;
+	font-size: 125%;
+	line-height: 150%;
 }
 
 /*------Tablet------*/
@@ -297,18 +408,33 @@ footer {
 		width:49%;
 	}
 
+	.description-box {
+		margin: 50px 0 50px 0;
+		text-align: center;
+	}
+
+	.project-title {
+		display: block;
+		float:none;
+		width:100%;
+		margin-bottom: 25px;
+		font-size: 150%; 
+	}
+
+	.project-description {
+		display: block;
+		float: none;
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 50px
+	}
+
 }
 
 /*------Mobile------*/
 
 @media screen and (max-width:768px){
-
-	html, body {
-
-/*		overflow-x: hidden;
-		overflow-y: hidden;*/
-
-	}
 
 	body {
 		font-size: 1em;
@@ -360,31 +486,40 @@ footer {
 		margin-bottom: 25px;
 	}
 
-	.description-box {
+	/*.description-box {
 		margin: 50px 0 50px 0;
 		text-align: center;
 	}
 
 	.project-title {
-		display: block; /*new*/
+		display: block;
 		float:none;
-		width:100%; /*new*/
+		width:100%;
 		margin-bottom: 25px;
 		font-size: 150%; 
 	}
 
 	.project-description {
-		display: block; /*new*/
+		display: block;
 		float: none;
-		width: 90%; /*new*/
+		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: 50px; /*new*/
+		margin-bottom: 50px
+	}*/
+
+	.project-description {
+		width: 100%;
 	}
 
 	.detail-box {
 		width:100%;
 		margin:0 0 25px 0;
+	}
+
+	.back-button {
+	    bottom: 25px;
+	    left: 25px;
 	}
 
 	.back-button:hover {
