@@ -344,7 +344,7 @@ sup {
 
 .tooltip .tooltiptext.ulan-ude{
 
-	background-image: url("textures/lenin.jpg");
+	background-image: url("../textures/lenin.jpg");
 	background-size: 130px 162px;
 	width: 130px;
 	height: 162px;
@@ -354,7 +354,7 @@ sup {
 
 .tooltip .tooltiptext.moscow{
 
-	background-image: url("textures/moscow.jpg");
+	background-image: url("../textures/moscow.jpg");
 	background-size: 130px 162px;
 	width: 130px;
 	height: 162px;
@@ -364,7 +364,7 @@ sup {
 
 .tooltip .tooltiptext.new-york{
 
-	background-image: url("textures/new-york.jpg");
+	background-image: url("../textures/new-york.jpg");
 	background-size: 130px 162px;
 	width: 130px;
 	height: 162px;
