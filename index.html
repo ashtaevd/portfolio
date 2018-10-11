@@ -1,616 +1,515 @@
-/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
-html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,iframe,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
-
-#element::-webkit-scrollbar { 
-    display: none; 
-}
-
-::-webkit-scrollbar { 
-    display: none; 
-}
-
-
-body { 
-
-	margin: 0px;
-	font-family: "Chivo", sans-serif;
-	font-size: .9em;
-	letter-spacing: -.25px;
-	-webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-
-}
-
-/*------Header------*/
-
-header {
-	position: fixed;
-	top:0;
-	/*margin: 0;*/
-	width: 100%;
-	height: 125px;
-	font-size: 200%;
-	background-color: rgba(255,255,255,.75) ;
-	border-bottom: 1px solid black;
-	z-index: 500;
-	/*margin: 25px 0px 0px 25px;*/
-}
-
-h1 {
-	display:inline-block;
-	font-size: 100%;
-	margin: 25px 0px 0px 25px;
-}
-
-a {
-	color:inherit;
-	text-decoration: inherit;
-}
-
-#eng-name {
-	display: inline-block;
-	z-index: 1
-}
-
-a:hover #eng-name{
-	display: none;
-}
-
- #rus-name {
-	display: none;
-}
-
-a:hover #rus-name {
-	display: inline-block;
-	z-index: 2
-}
-
-nav {
-	float:right;
-	display:inline-block;
-	margin: 25px 25px 0px 0px;
-}
-
-nav li {
-	display:inline;
-	margin-left: 40px;
-	cursor: pointer;
-}
-
-nav li:hover {
-
-	text-decoration: underline;
-	color: blue;
-
-}
-
-/*------Content------*/
-
-.wrapper {
-
-	overflow: auto;
-	margin: 125px 25px 0px 25px;
-}
-
-p {
-	/*font-size: 100%;*/
-	line-height: 150%;
-}
-
-#reel {
-
-	position: fixed;
-	right: -50%;
-	z-index: 0;
-	width: 0%;
-	height: 100%;
-	/*padding: 150px 25px 25px 25px;*/
-	font-size: 150%;
-	overflow: scroll;
-	background-color: rgba(255,255,255,.80);
-	-webkit-transition-duration: 0.3s;
-	-moz-transition-duration: 0.3s;
-	-o-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-	/*background-color: black;*/
-
-}
-
-#reel.reelOn {
-
-	right:0;
-	width: 100%;
-	height:100%;
-
-}
-
-iframe {
-
-	position: relative;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 80%;
-
-}
-
-.project-gallery {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	z-index: 0;
-	margin-top: 25px;
-	/*position: absolute;*/
-}
-
-.project-thumbnail {
-	display: inline;
-	/*position: relative;*/ /*turn this on if positioning gets fucked up*/
-	width:32.25%;
-	margin-bottom: 20px;
-	cursor: pointer;
-	transition: all .1s ease-in-out;
-	-webkit-transition: all .1s ease-in-out;
-	-moz-transition: all .1s ease-in-out;
-	-o-transition: all .1s ease-in-out;
-	-ms-transition: all .1s ease-in-out;
-}
-
-.project-thumbnail:hover {
-	text-indent: 5px;
-	color: blue;
-}
-
-.thumbnail-image {
-	display: block;
-	max-width: 100%;
-    max-height: 100%;
-	/*max-height: 63%*/
-	height: auto;
-}
-
-.thumbnail-content {
-	padding-bottom: 63%;
-	background-position: center center;
-	background-size: cover;
-	font-size: 150%;
-	font-weight: 700;
-	text-align: center;
-}
-
-.thumbnail-title {
-	margin-top: 6px;
-	display: block;
-	font-size: 125%;
-	/*font-size: 1.5vw; */
-	white-space:nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
-}
-
-.project-thumbnail.inactive {
-	pointer-events: none;
-	margin:0;
-}
-
-/*------Project View------*/
-
-.invisible {
-	display: none;
-	opacity:0;
-}
-
-.project-view {
-	display: none;
-	/*opacity: 0;*/
-	/*transition: opacity 1s ease-in-out;
-	-webkit-transition: opacity 1s ease-in-out;
-	-moz-transition: opacity 1s ease-in-out;
-	-o-transition: opacity 1s ease-in-out;
-	-ms-transition: opacity 1s ease-in-out;*/
-}
-
-.view-on {
-	display: block;
-}
-
-.hero-box {
-	z-index: 100;
-	width: 100%;
-}
-
-.hero-image {
-	display: block;
-	max-width: 100%;
-    max-height: 100%;
-	/*max-height: 63%*/
-	margin: 0 auto;
-	height: auto;
-}
-
-.description-box {
-	
-	margin: 50px 20% 50px 20%;
-	font-size: 150%;
-
-}
-
-.project-title {
-	display: inline-block; /*new*/
-	float: left; /*new*/
-	width:40%; /*new*/
-	/*font-size: 150%; */
-	font-weight: 700;
-}
-
-.project-description {
-	display: inline-block; 
-	float: right;
-	width: 60%;
-	/*font-size: 125%;*/
-	color: #939393;
-	margin-bottom: 50px;
-}
-
-.detail-box {
-	width:60%;
-	margin:0 20% 15px 20%;
-}
-
-.caption {
-	margin-top: 3px;
-	font-size: 100%;
-	color: #939393;
-}
-
-.back-button {
-	position: fixed;
-    z-index: 20;
-    bottom: 53px;
-    left: 6%;
-    font-size: 125%;
-    cursor: pointer;
-    transition: all .1s ease-in-out;
-   -moz-transition: all .1s ease-in-out;
-   -webkit-transition: all .1s ease-in-out;
-}
-
-.back-button:hover {
-	color: blue;
-	text-indent: -5px;
-}
-
-.copyright {
-	display:block;
-	margin: 75px 20% 0 20%;
-	text-align: center;
-	color: #939393;
-	opacity: .5;
-	font-size: 125%;
-}
-
-/*------About------*/
-
-#about p {
-	margin-bottom: 25px;
-}
-
-#about {
-
-	position: fixed;
-	right: -50%;
-	z-index: 25;
-	width: 0%;
-	height: 100%;
-	padding: 150px 25px 25px 25px;
-	border-left: 1px solid black;
-	font-size: 150%;
-	margin-top: -125px;
-	overflow: scroll;
-	background-color: rgb(255,255,255);
-	-webkit-transition-duration: 0.3s;
-	-moz-transition-duration: 0.3s;
-	-o-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-
-}
-
-#about::-webkit-scrollbar {
-	
-	display: none;
-
-}
-
-#about.aboutOn {
-
-	right:0;
-	width: 50%;
-
-}
-
-/*Exponent Text ('17)*/
-sup {
-
-	/*font-size:.3em;*/
-	left:100px;
-
-}
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 2px solid blue;
-    padding-bottom: -20px;
-    border-color: rgb(140,140,140);
-    opacity: 1;
-}
-
-.tooltip .tooltiptext {
-
-    visibility: hidden;
-    width: 140px;
-    background-color: white;
-    color: blue;
-    text-align: center;
-    padding: 5px 7px;
-    border: 1px solid black;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-    left: 50%;
-    margin-left: -70px;
-    opacity: 0;
-    font-size: 70%;
-    line-height: 115%
-
-}
-
-.tooltip:hover .tooltiptext {
-
-    visibility: visible;
-    opacity: 1;
-
-}
-
-.tooltip .tooltiptext.ulan-ude{
-
-	background-image: url("../textures/lenin.jpg");
-	background-size: 130px 162px;
-	width: 130px;
-	height: 162px;
-	padding: 0;
-
-}
-
-.tooltip .tooltiptext.moscow{
-
-	background-image: url("../textures/moscow.jpg");
-	background-size: 130px 162px;
-	width: 130px;
-	height: 162px;
-	padding: 0;
-
-}
-
-.tooltip .tooltiptext.new-york{
-
-	background-image: url("../textures/new-york.jpg");
-	background-size: 130px 162px;
-	width: 130px;
-	height: 162px;
-	padding: 0;
-
-}
-
-.close-button {
-
-	z-index: 20;
-    margin-bottom: 25px;
-    float: right;
-    cursor: pointer;
-    transition: all .1s ease-in-out;
-   -moz-transition: all .1s ease-in-out;
-   -webkit-transition: all .1s ease-in-out;
-
-}
-
-.close-button:hover {
-
-	color: blue;
-	text-indent: -5px;
-
-}
-
-/*------Footer------*/
-
-footer {
-	margin-top: 50px;
-	padding: 25px 0 25px 0;
-	border-top: 1px solid black;
-	text-align: center;
-	font-size: 125%;
-	/*line-height: 150%;*/
-}
-
-/*------Normal Screen------*/
-
-@media screen and (max-width:1560px){
-
-	.project-thumbnail {
-		/*display: inline;*/
-		width:49%;
-	}
-
-	.description-box {
-		font-size: 125%;
-	}
-
-}
-
-/*------Tablet------*/
-
-@media screen and (max-width:1200px){
-
-
-	.description-box {
-		margin: 50px 0 50px 0;
-		/*text-align: center;*/
-	}
-
-	.project-title {
-		display: block;
-		float:none;
-		width: 60%;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 40px;
-		font-size: 150%; 
-	}
-
-	.project-description {
-		display: block;
-		float: none;
-		width: 60%;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 60px
-	}
-
-/*	#about.aboutOn {
-
-		width: 100%;
-
-	}*/
-
-}
-
-/*------Mobile------*/
-
-@media screen and (max-width:768px){
-
-	body {
-		/*font-size: 1em;*/
-	}
-
-	.wrapper {
-
-		overflow: auto;
-		margin: 125px 15px 0px 15px;
-	}
-
-	header {
-		/*padding-bottom: 25px;*/
-		width: 100%;
-		font-size: 150%;
-		height: 90px;
-	}
-
-	h1 {
-		display: block;
-		font-weight: 700;
-		margin: 12.5px 25px 0px 15px;
-	}
-
-	nav {
-		float: none;
-		display:block;
-		margin: 10px 25px 0 15px;
-	}
-
-	nav li {
-		float:left;
-		margin: 0;
-		/*display:block;*/
-	}
-
-	.about-button, .projects-button {
-		margin-left: 15px;
-	}
-
-	#about {
-		letter-spacing: 0px;
-		font-size: 115%;
-		padding: 105px 15px 0 15px;
-		border-left: none;
-	}
-
-	#about.aboutOn {
-
-		width: 100%;
-
-	}
-
-	.project-gallery {
-
-		overflow: scroll;
-		margin-top: 0;
-
-	}
-
-	.project-thumbnail {
-
-		width:100%;
-		margin-bottom: 15px;
-
-	}
-
-	.thumbnail-title {
-
-		/*font-size: 125%;*/
-
-	}
-
-	.description-box {
-
-		margin: 30px 0 30px 0;
-		/*font-size: 115%;*/
-
-	}
-
-	.project-title, .project-description {
-
-		width:100%;
-		margin-bottom: 25px;
-
-	}
-
-	.detail-box {
-		width:100%;
-		margin:0 0 15px 0;
-	}
-
-	.caption {
-		font-size: 100%;
-	}
-
-	.back-button {
-	    bottom: 25px;
-	    left: 25px;
-	}
-
-	.back-button:hover {
-		color: initial;
-		text-indent: 0;
-	}
-
-	.back-button:active {
-		color: blue;
-/*		text-indent: -5px;*/
-	}
-
-	.copyright {
-
-		margin-top: 25px;
-		font-size: 100%;
-
-	}
-
-	footer {
-
-		margin-top: 25px;
-		font-size: 100%;
-
-	}
-
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Projects by Daniil Ashtaev</title>
+
+	<meta name="description" content="Selected design works up to 2018.">
+	<meta name="keywords" content="Ashtaev, graphic, design, portfolio, work, photography, posters, branding, russian, freelance, Cooper Union, New York, NYC">
+	<meta name="author" content="Daniil Ashtaev">
+
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+
+	<link href="https://fonts.googleapis.com/css?family=Chivo:300,400,700" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<header>
+		<!-- <h1><a href="../index.html">Daniil Ashtaev</a></h1> -->
+		<h1><a href="http://ashtaev.com"><span id="eng-name">Daniil Ashtaev</span><span id="rus-name">Даниил Аштаев</span></a></h1>
+		<nav>
+			<ul class="nav"> 
+				<li class="reel-button">Reel</li>
+				<li class="projects-button"><a href="http://ashtaev.com/portfolio/">Projects</a></li>
+				<li class="about-button">About</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id="about">
+		
+		<p>Greetings!</p>
+		<p>I have many things to say, but...</p>
+		<p>Born in <span class="tooltip">Ulan-Ude <span class="tooltiptext ulan-ude"></span></span> 
+		and raised in <span class="tooltip">Moscow<span class="tooltiptext moscow"></span></span>, 
+		I now reside in 
+		<span class="tooltip">New York<span class="tooltiptext new-york"></span></span>. 
+		Currently, I work at Redscout, a strategy and design agency.</p>
+		<p>I am a recent graduate of The Cooper Union,<sup>'17</sup> where I have learned to embrace design not limited to graphics alone. My work ranges from flat to physical, from written words to chopped wood.</p>
+		<p>As of today, I have <span class="tooltip"><span class="workYears"></span> years <span class="tooltiptext">More precisely, <span class="workDays"></span> days. From the beginning of my first internship, that&nbsp;is.</span></span> of professional experience in graphic design, spanning identity, web design, animation and so on and so forth.</p>
+		<p>Print and digital.
+		World and web.</p>
+		<p>Please, write to: </br>
+		ashtaevd@gmail.com</p>
+		<p>Farewell!</p>
+
+		<div class="close-button">Close →</div>
+				
+	</div>
+
+	<div class="wrapper">
+
+
+		<div id="reel">
+
+			<iframe src="https://player.vimeo.com/video/287008549?color=FFFFFF&title=0&byline=0&portrait=0" width="640" height="360" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+		</div>
+
+		<section class="project-gallery">
+		</section>
+
+		<section class="project-view">
+				<div class="project-content"></div>
+				<div class="copyright">
+					<p>All design, photography and delight is original.</p>
+					<p>© Daniil Ashtaev, forever and always.</p>
+				</div>
+				<div class="back-button">← Back</div>
+		</section>
+
+	</div>
+
+	<footer>
+		<h2>Graphic designer, elsewhere and NYC</h2>
+		<p>ashtaevd@gmail.com</p>
+		<p>Cryptocurrency OK</p>
+	</footer>
+
+	<!-- About section script -->
+	<script>
+
+		$('.reel-button').click(function(){
+
+			console.log("Reel Click");
+			$('#reel').toggleClass('reelOn');
+
+		});
+
+		$('.about-button').click(function(){
+
+			$('#about').toggleClass('aboutOn');
+
+		});
+
+		$('.close-button').click(function(){
+
+			$('#about').toggleClass('aboutOn');
+
+		});
+
+		//---professional practice duration
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+
+		if(dd<10) {
+		    dd='0'+dd
+		} 
+
+		if(mm<10) {
+		    mm='0'+mm
+		} 
+
+		today = mm+'.'+dd+'.'+yyyy;
+
+		var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+		var firstDate = new Date(2015,08,17);
+		var secondDate = new Date(yyyy,mm,dd);
+
+		var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+		$("span.workDays").text(diffDays);
+
+		workYears = diffDays /= 365;
+		workYears = Math.round(workYears * 100) / 100;
+
+		$("span.workYears").text(workYears);
+
+	</script>
+
+	<!-- Content population script -->
+	<script>
+
+		var projectsList = 
+			{
+				"projects": [
+
+					{
+					"projectTitle" : "The Inquisitive Identity",
+					"thumbnailImage" : "https://pp.userapi.com/c824204/v824204651/860a4/BQb-QQMzl2M.jpg",
+					"heroImage" : "https://pp.userapi.com/c824204/v824204651/8607c/qYKdlxjRuxc.jpg",
+					"descriptionText" : "I was approached to design an identity based on the feeling of curiosity. It was supposed to be a club of sorts. A club that is mysteriously alluring, but inviting at the same time. </br></br> Using metaphors, riddles, odd materials and other stratagems, I created a system that keeps the viewer inquisitive and lures them in.",
+					"detailImages" : 
+						{
+						"image1" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/8607c/qYKdlxjRuxc.jpg",
+							"caption" : "Invitation via business card"
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/86086/kV5Aip2pHGI.jpg",
+							"caption" : "Business card resolved"
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/860a4/BQb-QQMzl2M.jpg",
+							"caption" : "The Inquisitive—photographic representation"
+							},
+						"image4" : {
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/86090/vNB3Mvl2SUE.jpg",
+							"caption" : "Semi-revealing envelope"
+							},
+						"image5" : {
+							"imageLink" : "https://pp.userapi.com/c841026/v841026651/67ea7/DEt-kmnsvHo.jpg",
+							"caption" : "Branded letter opener cut from a found piece of steel"
+							},
+						"image6" : {
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/86072/TTkyhpqOYk4.jpg",
+							"caption" : "Forlorn invitation letter"
+							},
+						"image7" : {
+							"imageLink" : "https://pp.userapi.com/c824204/v824204651/8609a/T-Vn-koVLdY.jpg",
+							"caption" : " "
+							}
+						}
+					},
+
+
+					{
+					"projectTitle" : "General Purpose",
+					"thumbnailImage" : "https://pp.userapi.com/c841533/v841533835/5ad28/iUcUks6R1e8.jpg",
+					"heroImage" : "https://i.cubeupload.com/VRQoCw.gif",
+					"descriptionText" : "The book stands as a selection of objects that were picked and described in detail with their stories. Its writing is vaguely direct, as if targeted at the reader, even suggesting that one were in possession of these items. </br></br> My aim with the ambiguous language was to create a feeling of being assigned on a mission or embarking on a journey, thus entering a story of adventure.",
+					"detailImages" : 
+						{
+						"image1" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824504/v824504276/89082/jdC0P15pGb4.jpg",
+							"caption" : " "
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad28/iUcUks6R1e8.jpg",
+							"caption" : " "
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad32/YbAZzAFJ2fY.jpg",
+							"caption" : " "
+							},
+						"image4" : {
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad5a/saHPOvD6XCw.jpg",
+							"caption" : "Objects that beckoned further display were revealed in extra spreads"
+							},
+						"image5" : {
+							"imageLink" : "https://pp.userapi.com/c841533/v841533835/5ad50/FftkAmHW0BE.jpg",
+							"caption" : " "
+							},
+						"image6" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504276/8906f/NMUHUxoa8RY.jpg",
+							"caption" : "Last colophon of 2017"
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Lake Baikal: The Lore of&nbspthe&nbspLand",
+					"thumbnailImage" : "https://pp.userapi.com/c834201/v834201075/8164b/iPqHgeH8Mno.jpg",
+					"heroImage" : "https://pp.userapi.com/c824202/v824202075/87f37/xHs4HtPET34.jpg",
+					"descriptionText" : "In the summer of 2016, I went on an expedition to Lake Baikal in Siberia in search of myths and legends of the region. </br></br> Done as part of the Menschel Fellowship, a grant for projects of expansive inquiry, my project concluded with an exhibition at The Cooper Union. It featured the sacred landscapes I encountered, as well as stories told by the local shaman, whom I interviewed about traditions and folklore of Lake Baikal.",
+					"detailImages" : 
+						{
+						"image1" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c834201/v834201075/81654/ZXqg0SgxZd8.jpg",
+							"caption" : " "
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87ea1/zmD4n9Po2ew.jpg",
+							"caption" : " "
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87eaa/fFHG5uy693A.jpg",
+							"caption" : " "
+							},
+						"image4" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87ebc/fTQ20fcNeP4.jpg",
+							"caption" : " "
+							},
+						"image5" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87eb3/6DQKYSWdcVs.jpg",
+							"caption" : " "
+							},
+						"image6" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87ee2/QlCL5bhz4Bk.jpg",
+							"caption" : " "
+							},
+						"image7" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87eec/EnKq8gCCCxA.jpg",
+							"caption" : " "
+							},
+						"image8" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87ef6/7DC5OJgzj0M.jpg",
+							"caption" : " "
+							},
+						"image9" : {
+							"imageLink" : "https://pp.userapi.com/c824202/v824202075/87f00/xfrZ0nUe8D8.jpg",
+							"caption" : " "
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Of Light and Letter",
+					"thumbnailImage" : "https://pp.userapi.com/c841123/v841123887/5db6b/_y3iSzzlin4.jpg",
+					"heroImage" : "https://pp.userapi.com/c841123/v841123887/5db57/402hmQeWlmY.jpg",
+					"descriptionText" : "Exploring planes of graphic design, I concluded my studies with this senior exhibition. </br></br> The seminal piece with photographs looping around a weaving wooden structure had hidden text which read “there is design that can’t be thought of.” </br></br> A beacon in my practice, the motto emphasizes the limitlessness of design and leads the way to its uncharted territories.",
+					"detailImages" : 
+						{
+						"image1" : {
+							"imageLink" : "https://pp.userapi.com/c841123/v841123887/5db61/3tZsuwCFpGY.jpg",
+							"caption" : " "
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c841123/v841123887/5db6b/_y3iSzzlin4.jpg",
+							"caption" : "Concealed phrase that read, “There is design that can’t be thought of”"
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c841123/v841123887/5db75/Ieb0auVTlq4.jpg",
+							"caption" : " "
+							},
+						"image4" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c834101/v834101887/874cd/t14pG1j-yPQ.jpg",
+							"caption" : " "
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Resolve It",
+					"thumbnailImage" : "https://pp.userapi.com/c824202/v824202651/850b2/vdmwGFfyK6g.jpg",
+					"heroImage" : "https://pp.userapi.com/c824202/v824202651/8508c/YR7LoNPBtI8.jpg",
+					"descriptionText" : "Beginning with the gameplay and proceeding to visual design, I created a card game that relies on storytelling and finding clues to resolve mysteries. </br></br> Inspired by 20th century pocket novels, I combined type of that era with crude paper collages to illustrate the game’s peculiar narratives. </br></br> Release date TBA in 2018.",
+					"detailImages" : 
+						{
+						"image1" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824202/v824202651/85078/q2jFntI-TcQ.jpg",
+							"caption" : "Card box"
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824202/v824202651/85082/5l77vlA1Ml8.jpg",
+							"caption" : "Story card selection"
+							},
+						"image3" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824202/v824202651/850a0/UqnBcZ0Orj0.jpg",
+							"caption" : "Instruction sheet"
+							},
+						"image4" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824202/v824202651/85096/5i0MJqGvKG8.jpg",
+							"caption" : "One of the role cards"
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Next Mosh Website&nbspRedesign",
+					"thumbnailImage" : "https://pp.userapi.com/c824504/v824504276/890ba/Rr1AnR36hrQ.jpg",
+					"heroImage" : "https://pp.userapi.com/c824504/v824504276/890fd/vMOkec3WwHM.jpg",
+					"descriptionText" : "Nextmosh is a metal- and hardcore- show herald in the New York State area. They had a functional website that needed a new look. </br></br> Taking metal show posters and merchandise as the starting point, I redesigned their identity and the website, including functionality of the event calendar.",
+					"detailImages" : 
+						{
+						"image1" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504276/890f3/vTD7b70p9Io.jpg",
+							"caption" : "Preliminary site map"
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824504/v824504276/890c4/Gs4aUxCdiCs.jpg",
+							"caption" : "Local band profile"
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504276/890b0/0Dcno3vfb_w.jpg",
+							"caption" : "News article"
+							},
+						"image4" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c841533/v841533464/5b115/wrMboakIiOA.jpg",
+							"caption" : "Local band index"
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Creating a Presence",
+					"thumbnailImage" : "https://pp.userapi.com/c840432/v840432316/444c3/PRRllEeYSf8.jpg",
+					"heroImage" : "https://pp.userapi.com/c840623/v840623316/4555c/wutpdKMoGLk.jpg",
+					"descriptionText" : "In this project, two of my peers and I committed to giving an identity to the empty storefront on Stuyvesant Street. </br></br> With few materials and some code, we created a curious, whimsical presence. It attentively watched over the passersby from a place that usually went overlooked and unnoticed. </br></br> Passersby who did notice had an amusing encounter with these quiet eyes, each responding in their own way.",
+					"detailImages" : 
+						{
+						"image1" : {
+							"imageLink" : "https://pp.userapi.com/c840623/v840623316/45548/xC56KpcE7hA.jpg",
+							"caption" : " "
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c840623/v840623316/45552/4ma-NEJR0Os.jpg",
+							"caption" : " "
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c840623/v840623316/45566/3p0hsrs8YS8.jpg",
+							"caption" : "Where the magic happened"
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Preserving the US Constitution",
+					"thumbnailImage" : "https://pp.userapi.com/c824504/v824504887/87c19/1wM-0a6Zhmw.jpg",
+					"heroImage" : "https://pp.userapi.com/c824504/v824504887/87c37/2g-J5y5FcH4.jpg",
+					"descriptionText" : "Starting with the notion that the founding tenets are timeless and imperishable, I attributed those qualities to the physical book. </br></br> It features a fire-proof aluminum encasing, water- and tear-proof book cover of Tyvek, and pages coated in fire retardant, altogether making the book nearly invincible. The purity of contents was left unhindered to avoid distraction. </br></br> The encasing and book cover harken back to dry, clear-cut designs on military rations, which intrinsically last for ages.",
+					"detailImages" : 
+						{
+						"image1" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504887/87c19/1wM-0a6Zhmw.jpg",
+							"caption" : "Aluminum encasing"
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824504/v824504887/87c23/0OISPYMBtlQ.jpg",
+							"caption" : "Preamble to the United States Constitution"
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504887/87c2d/1hGUqFawKX4.jpg",
+							"caption" : "Interior layout"
+							}
+						}
+					},
+
+					{
+					"projectTitle" : "Select Infographics",
+					"thumbnailImage" : "https://pp.userapi.com/c824504/v824504335/89ff8/QAdnv0yw99c.jpg",
+					"heroImage" : " ",
+					"descriptionText" : "A selection of infographic posters on various subjects: from reality of Soviet space dogs to fiction of American groundhogs.",
+					"detailImages" : 
+						{
+						"image1" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504335/8a00a/UhJj5IU9bWo.jpg",
+							"caption" : "Soviet Dogs in Space, a commemorative infographic about the late canine comrades"
+							},
+						"image2" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824504/v824504335/89ff8/QAdnv0yw99c.jpg",
+							"caption" : "The most utilitarian, Wall Anchor Strength chart"
+							},
+						"image3" : {
+							"imageLink" : "https://pp.userapi.com/c824504/v824504335/8a01e/2TNpuT8UyYs.jpg",
+							"caption" : "Groundhog Day timeline (attn: spoilers)"
+							},
+						"image4" : 
+							{
+							"imageLink" : "https://pp.userapi.com/c824504/v824504335/8a039/KoT1TJGg29E.jpg",
+							"caption" : "Map of local broken lamp posts, as recorded on a walk of May 2, 2016 in East Village"
+							}
+						}
+					}
+
+				]
+			}
+
+		// create gallery thumbnails
+		for (i = 1; i <= projectsList["projects"].length; i++ ) {
+
+			var eachProject = projectsList["projects"][i-1];
+
+			var projectTitle = eachProject['projectTitle'];
+			var thumbnailImage = eachProject['thumbnailImage'];
+			var detailImages = eachProject['detailImages'];
+
+			// create new thumbnail with background image and title
+			var newThumb = 
+				'<div class="project-thumbnail">' +
+					'<div class="thumbnail-content" style="background-image: url(' + thumbnailImage + ');"></div>' +
+					'<h3 class="thumbnail-title">' + projectTitle + '</h3>' +
+				'</div>';
+
+			//add the thumbnail to the project gallery	
+			$('.project-gallery').append(newThumb);
+
+		} // end of projects loop
+
+		// add empty div
+		$(".project-gallery").append('<div class="project-thumbnail inactive"></div>');
+
+
+
+		// project-view
+		$('.project-thumbnail').click(function(){
+
+			//get index of the clicked thumbnail
+			var projectIndex = $(this).index();
+			var clickedProject = projectsList["projects"][projectIndex];
+
+			var projHeroImage = clickedProject['heroImage'];
+			var projProjectTitle = clickedProject['projectTitle'];
+			var projDescriptionText = clickedProject['descriptionText'];
+			var projDetailImages = clickedProject['detailImages'];
+
+			// add hero, title and description to .project-content
+			var newProjectIntro = 
+				'<div class="hero-box">' +
+					'<img class="hero-image" src="' + projHeroImage + '"/>' +
+				'</div>' +
+				'<div class="description-box">' +
+					'<h3 class="project-title">' + projProjectTitle + '</h3>' +
+					'<p class="project-description">' + projDescriptionText + '</p>' + 
+				'</div>';
+			$(".project-content").append(newProjectIntro);	
+
+			// add detail images to .project-content
+			for (k = 1; k <= Object.keys(projDetailImages).length; k++) {
+
+				var newDetailImage = 
+					'<div class="detail-box">' +
+						'<img class="detail-image" src="' + projDetailImages["image" + k]["imageLink"] + '"/>' +
+						'<p class="caption">' + projDetailImages["image" + k]["caption"] + '</p>' +
+					'</div>';
+				$(".project-content").append(newDetailImage);
+
+			}
+
+			// turn on .project-view and turn off .project-gallery
+			window.scrollTo(0, 0);
+			$('.project-view').toggleClass('view-on');
+			$(".project-gallery").hide();
+
+		});
+
+
+
+		// go back to gellery view
+		$('.back-button').click(function(){
+
+			window.scrollTo(0, 0);
+			$('.project-view').toggleClass('view-on');
+			$(".project-gallery").show();
+			$(".project-content").empty();
+			
+		});
+
+	</script>
+
+</body>
+
+</html>
