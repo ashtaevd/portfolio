@@ -11,12 +11,14 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 
 
 body { 
+
+	margin: 0px;
 	font-family: "Chivo", sans-serif;
-	font-size: 1em;
+	font-size: .9em;
+	letter-spacing: -.25px;
 	-webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-	/*Google: Oswald, Archivo Narrow*/
 
 }
 
@@ -29,7 +31,7 @@ header {
 	width: 100%;
 	height: 125px;
 	font-size: 200%;
-	background-color: rgba(255,255,250,.5) ;
+	background-color: rgba(255,255,255,.75) ;
 	border-bottom: 1px solid black;
 	z-index: 500;
 	/*margin: 25px 0px 0px 25px;*/
@@ -72,7 +74,7 @@ nav {
 
 nav li {
 	display:inline;
-	margin-left: 50px;
+	margin-left: 40px;
 	cursor: pointer;
 }
 
@@ -96,6 +98,43 @@ p {
 	line-height: 150%;
 }
 
+#reel {
+
+	position: fixed;
+	right: -50%;
+	z-index: 0;
+	width: 0%;
+	height: 100%;
+	/*padding: 150px 25px 25px 25px;*/
+	font-size: 150%;
+	overflow: scroll;
+	background-color: rgba(255,255,255,.80);
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	/*background-color: black;*/
+
+}
+
+#reel.reelOn {
+
+	right:0;
+	width: 100%;
+	height:100%;
+
+}
+
+iframe {
+
+	position: relative;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+
+}
+
 .project-gallery {
 	display: flex;
 	flex-wrap: wrap;
@@ -108,8 +147,8 @@ p {
 .project-thumbnail {
 	display: inline;
 	/*position: relative;*/ /*turn this on if positioning gets fucked up*/
-	width:32%;
-	margin-bottom: 25px;
+	width:32.25%;
+	margin-bottom: 20px;
 	cursor: pointer;
 	transition: all .1s ease-in-out;
 	-webkit-transition: all .1s ease-in-out;
@@ -133,15 +172,11 @@ p {
 
 .thumbnail-content {
 	padding-bottom: 63%;
-	background-image: url("img/identity2.jpg");
 	background-position: center center;
 	background-size: cover;
 	font-size: 150%;
 	font-weight: 700;
-	/*position: relative;*/
 	text-align: center;
-	/*vertical-align: middle;*/
-	/*line-height: 63%;*/
 }
 
 .thumbnail-title {
@@ -195,15 +230,17 @@ p {
 }
 
 .description-box {
-	/*text-align: center;*/
+	
 	margin: 50px 20% 50px 20%;
+	font-size: 150%;
+
 }
 
 .project-title {
 	display: inline-block; /*new*/
 	float: left; /*new*/
 	width:40%; /*new*/
-	font-size: 150%; 
+	/*font-size: 150%; */
 	font-weight: 700;
 }
 
@@ -211,19 +248,19 @@ p {
 	display: inline-block; 
 	float: right;
 	width: 60%;
-	font-size: 125%;
+	/*font-size: 125%;*/
 	color: #939393;
 	margin-bottom: 50px;
 }
 
 .detail-box {
 	width:60%;
-	margin:0 20% 25px 20%;
+	margin:0 20% 15px 20%;
 }
 
 .caption {
 	margin-top: 3px;
-	font-size: 80%;
+	font-size: 100%;
 	color: #939393;
 }
 
@@ -291,12 +328,6 @@ p {
 	width: 50%;
 
 }
-
-/*#about.aboutOn * {
-
-	opacity: 1;
-
-}*/
 
 /*Exponent Text ('17)*/
 sup {
@@ -373,51 +404,67 @@ sup {
 }
 
 .close-button {
-	position: absolute;
-    z-index: 20;
-    bottom: 25px;
-    right: 25px;
+
+	z-index: 20;
+    margin-bottom: 25px;
+    float: right;
     cursor: pointer;
     transition: all .1s ease-in-out;
    -moz-transition: all .1s ease-in-out;
    -webkit-transition: all .1s ease-in-out;
+
 }
 
 .close-button:hover {
+
 	color: blue;
 	text-indent: -5px;
+
 }
 
 /*------Footer------*/
 
 footer {
-	margin-top: 75px;
-	padding: 50px 0 50px 0;
+	margin-top: 50px;
+	padding: 25px 0 25px 0;
 	border-top: 1px solid black;
 	text-align: center;
 	font-size: 125%;
-	line-height: 150%;
+	/*line-height: 150%;*/
+}
+
+/*------Normal Screen------*/
+
+@media screen and (max-width:1560px){
+
+	.project-thumbnail {
+		/*display: inline;*/
+		width:49%;
+	}
+
+	.description-box {
+		font-size: 125%;
+	}
+
 }
 
 /*------Tablet------*/
 
 @media screen and (max-width:1200px){
 
-	.project-thumbnail {
-		display: inline;
-		width:49%;
-	}
 
 	.description-box {
 		margin: 50px 0 50px 0;
-		text-align: center;
+		/*text-align: center;*/
 	}
 
 	.project-title {
 		display: block;
 		float:none;
-		width:100%;
-		margin-bottom: 25px;
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 40px;
 		font-size: 150%; 
 	}
 
@@ -427,8 +474,14 @@ footer {
 		width: 60%;
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: 50px
+		margin-bottom: 60px
 	}
+
+/*	#about.aboutOn {
+
+		width: 100%;
+
+	}*/
 
 }
 
@@ -437,31 +490,32 @@ footer {
 @media screen and (max-width:768px){
 
 	body {
-		font-size: 1em;
+		/*font-size: 1em;*/
+	}
+
+	.wrapper {
+
+		overflow: auto;
+		margin: 125px 15px 0px 15px;
 	}
 
 	header {
-		/*margin: 0;*/
-		padding-bottom: 25px;
+		/*padding-bottom: 25px;*/
 		width: 100%;
-		font-size: 160%;
-		height: 100px;
-		/*padding-bottom: 125px;*/
+		font-size: 150%;
+		height: 90px;
 	}
 
 	h1 {
 		display: block;
-		text-align: center;
-		/*font-size: 100%;*/
-		/*margin-right: auto;*/
-		/*margin-left:  auto;*/
-		margin: 12.5px 25px 0px 25px;
+		font-weight: 700;
+		margin: 12.5px 25px 0px 15px;
 	}
 
 	nav {
 		float: none;
 		display:block;
-		margin: 12.5px 25px 0 25px;
+		margin: 10px 25px 0 15px;
 	}
 
 	nav li {
@@ -470,51 +524,64 @@ footer {
 		/*display:block;*/
 	}
 
-	.about-button {
-		/*display:block;*/
-		float: right;
-		margin-left: 0px;
+	.about-button, .projects-button {
+		margin-left: 15px;
+	}
+
+	#about {
+		letter-spacing: 0px;
+		font-size: 115%;
+		padding: 105px 15px 0 15px;
+		border-left: none;
+	}
+
+	#about.aboutOn {
+
+		width: 100%;
+
 	}
 
 	.project-gallery {
+
 		overflow: scroll;
 		margin-top: 0;
+
 	}
 
 	.project-thumbnail {
+
+		width:100%;
+		margin-bottom: 15px;
+
+	}
+
+	.thumbnail-title {
+
+		/*font-size: 125%;*/
+
+	}
+
+	.description-box {
+
+		margin: 30px 0 30px 0;
+		/*font-size: 115%;*/
+
+	}
+
+	.project-title, .project-description {
+
 		width:100%;
 		margin-bottom: 25px;
-	}
 
-	/*.description-box {
-		margin: 50px 0 50px 0;
-		text-align: center;
-	}
-
-	.project-title {
-		display: block;
-		float:none;
-		width:100%;
-		margin-bottom: 25px;
-		font-size: 150%; 
-	}
-
-	.project-description {
-		display: block;
-		float: none;
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50px
-	}*/
-
-	.project-description {
-		width: 100%;
 	}
 
 	.detail-box {
 		width:100%;
-		margin:0 0 25px 0;
+		margin:0 0 15px 0;
+	}
+
+	.caption {
+		font-size: 100%;
 	}
 
 	.back-button {
@@ -530,6 +597,20 @@ footer {
 	.back-button:active {
 		color: blue;
 /*		text-indent: -5px;*/
+	}
+
+	.copyright {
+
+		margin-top: 25px;
+		font-size: 100%;
+
+	}
+
+	footer {
+
+		margin-top: 25px;
+		font-size: 100%;
+
 	}
 
 }
