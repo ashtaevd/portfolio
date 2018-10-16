@@ -375,7 +375,7 @@ sup {
 
 .tooltip .tooltiptext.diamonds{
 
-	background-image: url("textures/diamonds.jpg");
+	background-image: url("../textures/diamonds.jpg");
 	background-size: 166px 133px;
 	width: 166px;
 	height: 133px;
@@ -385,7 +385,7 @@ sup {
 
 .tooltip .tooltiptext.ai{
 
-	background-image: url("textures/ai.jpg");
+	background-image: url("../textures/ai.jpg");
 	background-size: 166px 133px;
 	width: 166px;
 	height: 133px;
@@ -395,7 +395,7 @@ sup {
 
 .tooltip .tooltiptext.media{
 
-	background-image: url("textures/media.jpg");
+	background-image: url("../textures/media.jpg");
 	background-size: 166px 133px;
 	width: 166px;
 	height: 133px;
