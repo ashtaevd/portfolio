@@ -373,32 +373,32 @@ sup {
 
 }
 
-.tooltip .tooltiptext.ulan-ude{
+.tooltip .tooltiptext.diamonds{
 
-	background-image: url("../textures/lenin.jpg");
-	background-size: 130px 162px;
-	width: 130px;
-	height: 162px;
+	background-image: url("textures/diamonds.jpg");
+	background-size: 166px 133px;
+	width: 166px;
+	height: 133px;
 	padding: 0;
 
 }
 
-.tooltip .tooltiptext.moscow{
+.tooltip .tooltiptext.ai{
 
-	background-image: url("../textures/moscow.jpg");
-	background-size: 130px 162px;
-	width: 130px;
-	height: 162px;
+	background-image: url("textures/ai.jpg");
+	background-size: 166px 133px;
+	width: 166px;
+	height: 133px;
 	padding: 0;
 
 }
 
-.tooltip .tooltiptext.new-york{
+.tooltip .tooltiptext.media{
 
-	background-image: url("../textures/new-york.jpg");
-	background-size: 130px 162px;
-	width: 130px;
-	height: 162px;
+	background-image: url("textures/media.jpg");
+	background-size: 166px 133px;
+	width: 166px;
+	height: 133px;
 	padding: 0;
 
 }
