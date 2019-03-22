@@ -296,6 +296,14 @@ iframe {
 	margin-bottom: 25px;
 }
 
+#about a {
+/* 	position: relative; */
+    	display: inline-block;
+    	border-bottom: 2px solid blue;
+/*    	padding-bottom: -20px; */
+    	border-color: rgb(140,140,140);
+}
+
 #about {
 
 	position: fixed;
